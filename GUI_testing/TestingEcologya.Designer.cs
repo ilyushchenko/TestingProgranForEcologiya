@@ -104,11 +104,15 @@
             // 
             // treeViewEcologya
             // 
+            this.treeViewEcologya.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.treeViewEcologya.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.treeViewEcologya.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
             this.treeViewEcologya.Location = new System.Drawing.Point(0, 0);
             this.treeViewEcologya.Name = "treeViewEcologya";
             this.treeViewEcologya.Size = new System.Drawing.Size(179, 624);
             this.treeViewEcologya.TabIndex = 0;
+            this.treeViewEcologya.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.treeViewEcologya_AfterSelect);
+            this.treeViewEcologya.Click += new System.EventHandler(this.treeViewEcologya_Click);
             // 
             // webBrowserEcologya
             // 
@@ -119,7 +123,8 @@
             this.webBrowserEcologya.ScriptErrorsSuppressed = true;
             this.webBrowserEcologya.Size = new System.Drawing.Size(555, 624);
             this.webBrowserEcologya.TabIndex = 0;
-            this.webBrowserEcologya.Url = new System.Uri("https://www.google.com", System.UriKind.Absolute);
+            this.webBrowserEcologya.Url = new System.Uri("C:\\Users\\Андрей\\Source\\Repos\\TestingProgranForEcologiya\\GUI_testing\\bin\\Debug\\htm" +
+        "l\\vved.html", System.UriKind.Absolute);
             // 
             // tabPageTester
             // 
