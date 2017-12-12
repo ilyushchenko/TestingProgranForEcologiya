@@ -25,6 +25,20 @@ namespace GUI_testing
            this.dataGridViewEcologya.Rows.Add("№ Варианта");
            this.dataGridViewEcologya.Rows.Add("Вещество");
            this.dataGridViewEcologya.Rows.Add("ПДК, мг/м^3");
+           this.dataGridViewEcologya.Rows.Add("Cф, мг/м^3");
+           this.dataGridViewEcologya.Rows.Add("Н, м");
+           this.dataGridViewEcologya.Rows.Add("F");
+           this.dataGridViewEcologya.Rows.Add("m");
+           this.dataGridViewEcologya.Rows.Add("n");
+           this.dataGridViewEcologya.Rows.Add("Mx, % от ПДВ");
+           this.dataGridViewEcologya.Rows.Add("Температура среды");
+           this.dataGridViewEcologya.Rows.Add("Диаметр трубы");
+           this.dataGridViewEcologya.Rows.Add("a");
+           this.dataGridViewEcologya.Rows.Add("b");
+           this.dataGridViewEcologya.Rows.Add("Mx, % от ПДВ");
+           this.dataGridViewEcologya.Rows.Add("w0, м/с");
+
+           dataGridViewEcologya.Rows[1].Cells[1].ReadOnly = true;
 
           
         }
