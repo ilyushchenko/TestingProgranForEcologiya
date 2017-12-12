@@ -1,9 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2013
-VisualStudioVersion = 12.0.31101.0
+# Visual Studio 15
+VisualStudioVersion = 15.0.26403.7
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GUI_testing", "GUI_testing\GUI_testing.csproj", "{EEDB813D-F288-4BF2-8537-42DC36531D0D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestingProgramBusinessLogic", "TestingProgramBusinessLogic\TestingProgramBusinessLogic.csproj", "{19B88C40-77EA-4D44-B2C5-7099E80BCA1F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,18 +17,22 @@ Global
 		{EEDB813D-F288-4BF2-8537-42DC36531D0D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EEDB813D-F288-4BF2-8537-42DC36531D0D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EEDB813D-F288-4BF2-8537-42DC36531D0D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{19B88C40-77EA-4D44-B2C5-7099E80BCA1F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{19B88C40-77EA-4D44-B2C5-7099E80BCA1F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{19B88C40-77EA-4D44-B2C5-7099E80BCA1F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{19B88C40-77EA-4D44-B2C5-7099E80BCA1F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		VSCustomBkgrdPaint = True
-		VSUseSystemFonts = False
-		VSSkinToggleButtons = True
-		VSSkinFlatStyles = True
-		VSTextShadow = True
-		VSToolStripStyle = Mixed
-		VSTargetControls = FormsAndControls
 		VSStyle = Office2010 (Silver).vssf
+		VSTargetControls = FormsAndControls
+		VSToolStripStyle = Mixed
+		VSTextShadow = True
+		VSSkinFlatStyles = True
+		VSSkinToggleButtons = True
+		VSUseSystemFonts = False
+		VSCustomBkgrdPaint = True
 	EndGlobalSection
 EndGlobal
