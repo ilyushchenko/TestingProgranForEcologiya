@@ -42,10 +42,12 @@
             // 
             // tabControlEcologya
             // 
+            this.tabControlEcologya.Alignment = System.Windows.Forms.TabAlignment.Left;
             this.tabControlEcologya.Controls.Add(this.tabPageBook);
             this.tabControlEcologya.Controls.Add(this.tabPageTester);
             this.tabControlEcologya.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tabControlEcologya.Location = new System.Drawing.Point(0, 0);
+            this.tabControlEcologya.Multiline = true;
             this.tabControlEcologya.Name = "tabControlEcologya";
             this.tabControlEcologya.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.tabControlEcologya.SelectedIndex = 0;
@@ -55,20 +57,20 @@
             // tabPageBook
             // 
             this.tabPageBook.Controls.Add(this.splitContainer1);
-            this.tabPageBook.Location = new System.Drawing.Point(4, 22);
+            this.tabPageBook.Location = new System.Drawing.Point(23, 4);
             this.tabPageBook.Name = "tabPageBook";
             this.tabPageBook.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageBook.Size = new System.Drawing.Size(763, 357);
+            this.tabPageBook.Size = new System.Drawing.Size(744, 375);
             this.tabPageBook.TabIndex = 0;
             this.tabPageBook.Text = "Электронный учебник";
             this.tabPageBook.UseVisualStyleBackColor = true;
             // 
             // tabPageTester
             // 
-            this.tabPageTester.Location = new System.Drawing.Point(4, 22);
+            this.tabPageTester.Location = new System.Drawing.Point(23, 4);
             this.tabPageTester.Name = "tabPageTester";
             this.tabPageTester.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageTester.Size = new System.Drawing.Size(763, 357);
+            this.tabPageTester.Size = new System.Drawing.Size(744, 375);
             this.tabPageTester.TabIndex = 1;
             this.tabPageTester.Text = "Тестирование";
             this.tabPageTester.UseVisualStyleBackColor = true;
@@ -86,8 +88,8 @@
             // splitContainer1.Panel2
             // 
             this.splitContainer1.Panel2.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.splitContainer1.Size = new System.Drawing.Size(757, 351);
-            this.splitContainer1.SplitterDistance = 184;
+            this.splitContainer1.Size = new System.Drawing.Size(738, 369);
+            this.splitContainer1.SplitterDistance = 179;
             this.splitContainer1.TabIndex = 0;
             // 
             // TestingEcologya

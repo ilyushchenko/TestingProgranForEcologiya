@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using TestingProgramBusinessLogic;
+
 
 namespace GUI_testing
 {
@@ -15,7 +17,7 @@ namespace GUI_testing
         public TestingEcologya()
         {
             InitializeComponent();
-            
         }
+        
     }
 }
