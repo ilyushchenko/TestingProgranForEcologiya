@@ -8,6 +8,13 @@ using System.Windows.Forms;
 
 namespace GUI_testing
 {
+    public struct ContentsElectronickBook
+    {
+        public int number_sections { set; get; }
+        public int number_subsections { set; get; }
+        public string title_division { set; get; }
+        public string link_site { set; get; }
+    }
     class ElectronickTextBook
     {
         //private List<int> number_sections = new List<int>();
@@ -17,13 +24,7 @@ namespace GUI_testing
 
         ContentsElectronickBook contents_books = new ContentsElectronickBook();
         List<ContentsElectronickBook> list_contents_books = new List<ContentsElectronickBook>();
-        public struct ContentsElectronickBook
-        {
-           public int number_sections {set; get;}
-           public int number_subsections {set; get;}
-           public string title_division {set; get;}
-           public string link_site {set; get;}
-        }
+       
         public void ReadTextBook()
         {
             using (StreamReader read_text_book = new StreamReader("html\\index.txt", encoding: Encoding.GetEncoding(1251)))
@@ -50,7 +51,7 @@ namespace GUI_testing
         {
             foreach (var content_book in list_contents_books)
             {
-               // treeView.Nodes[content_book.number_sections].Nodes[content_book.number_subsections].Nodes.Add(new TreeNode(content_book.title_division));
+                // treeView.Nodes[content_book.number_sections].Nodes[content_book.number_subsections].Nodes.Add(new TreeNode(content_book.title_division));
                 if (content_book.number_subsections == 0)
                 {
                     treeView.Nodes.Add(content_book.title_division);
@@ -80,18 +81,35 @@ namespace GUI_testing
                     treeView.Nodes[7].Nodes.Add(content_book.title_division);
                 }
 
-                //for (int k = 0; k < 10; k++)
+                //for (int k = 0; k < 8; k++)
                 //{
                 //    if (content_book.number_subsections == content_book.number_sections)
                 //    {
-                //        treeView.Nodes[4].Nodes.Add(content_book.title_division);
+                //        treeView.Nodes[k].Nodes.Add(content_book.title_division);
                 //    }
                 //}
-               
+
             }
+           
+
+            //for (int z =0; z < list_contents_books.Count; z++)
+            //{
+            //    for (int k = 0; k < 8; k++)
+            //    {
+            //        if (list_contents_books[z].number_sections == list_contents_books[k].number_subsections)
+            //        {
+            //            treeView.Nodes[k].Nodes.Add(list_contents_books[k].title_division);
+            //        }
+            //    }
+            //}
           //  treeView.Nodes.Add("Загаловок");
             //treeView.Nodes.Add("Введение");
             //treeView.Nodes[0].Nodes.Add("dddd");
+        }
+       
+        public List<ContentsElectronickBook> ContentBook
+        {
+            get { return list_contents_books; }
         }
     }
 }
