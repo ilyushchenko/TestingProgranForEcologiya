@@ -18,6 +18,16 @@ namespace GUI_testing
         {
             InitializeComponent();
         }
+
+        private void TestingEcologya_Load(object sender, EventArgs e)
+        {
+         
+           this.dataGridViewEcologya.Rows.Add("№ Варианта");
+           this.dataGridViewEcologya.Rows.Add("Вещество");
+           this.dataGridViewEcologya.Rows.Add("ПДК, мг/м^3");
+
+          
+        }
         
     }
 }
