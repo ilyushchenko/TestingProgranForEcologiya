@@ -47,6 +47,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ElectronickTextBook.cs" />
     <Compile Include="TestingEcologya.cs">
       <SubType>Form</SubType>
     </Compile>
