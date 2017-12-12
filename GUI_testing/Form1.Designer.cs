@@ -36,9 +36,9 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(737, 334);
+            this.ClientSize = new System.Drawing.Size(771, 383);
             this.Name = "TestingEcologiya";
-            this.Text = "Тестирование по экологии";
+            this.Text = "Тестирование по Экологии";
             this.ResumeLayout(false);
 
         }
