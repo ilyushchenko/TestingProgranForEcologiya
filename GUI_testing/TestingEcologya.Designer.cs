@@ -29,15 +29,24 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.timerTest = new System.Windows.Forms.Timer(this.components);
             this.tabControlEcologya = new System.Windows.Forms.TabControl();
             this.tabPageBook = new System.Windows.Forms.TabPage();
             this.tabPageTester = new System.Windows.Forms.TabPage();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
+            this.webBrowserEcologya = new System.Windows.Forms.WebBrowser();
+            this.treeViewEcologya = new System.Windows.Forms.TreeView();
+            this.dataGridViewEcologya = new System.Windows.Forms.DataGridView();
+            this.Amount = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Value = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabControlEcologya.SuspendLayout();
             this.tabPageBook.SuspendLayout();
+            this.tabPageTester.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
+            this.splitContainer1.Panel1.SuspendLayout();
+            this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewEcologya)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControlEcologya
@@ -67,6 +76,7 @@
             // 
             // tabPageTester
             // 
+            this.tabPageTester.Controls.Add(this.dataGridViewEcologya);
             this.tabPageTester.Location = new System.Drawing.Point(23, 4);
             this.tabPageTester.Name = "tabPageTester";
             this.tabPageTester.Padding = new System.Windows.Forms.Padding(3);
@@ -83,14 +93,58 @@
             // 
             // splitContainer1.Panel1
             // 
+            this.splitContainer1.Panel1.Controls.Add(this.treeViewEcologya);
             this.splitContainer1.Panel1.RightToLeft = System.Windows.Forms.RightToLeft.No;
             // 
             // splitContainer1.Panel2
             // 
+            this.splitContainer1.Panel2.Controls.Add(this.webBrowserEcologya);
             this.splitContainer1.Panel2.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.splitContainer1.Size = new System.Drawing.Size(738, 369);
             this.splitContainer1.SplitterDistance = 179;
             this.splitContainer1.TabIndex = 0;
+            // 
+            // webBrowserEcologya
+            // 
+            this.webBrowserEcologya.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.webBrowserEcologya.Location = new System.Drawing.Point(0, 0);
+            this.webBrowserEcologya.MinimumSize = new System.Drawing.Size(20, 20);
+            this.webBrowserEcologya.Name = "webBrowserEcologya";
+            this.webBrowserEcologya.ScriptErrorsSuppressed = true;
+            this.webBrowserEcologya.Size = new System.Drawing.Size(555, 369);
+            this.webBrowserEcologya.TabIndex = 0;
+            this.webBrowserEcologya.Url = new System.Uri("https://www.google.com", System.UriKind.Absolute);
+            // 
+            // treeViewEcologya
+            // 
+            this.treeViewEcologya.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.treeViewEcologya.Location = new System.Drawing.Point(0, 0);
+            this.treeViewEcologya.Name = "treeViewEcologya";
+            this.treeViewEcologya.Size = new System.Drawing.Size(179, 369);
+            this.treeViewEcologya.TabIndex = 0;
+            // 
+            // dataGridViewEcologya
+            // 
+            this.dataGridViewEcologya.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewEcologya.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Amount,
+            this.Value});
+            this.dataGridViewEcologya.Location = new System.Drawing.Point(27, 52);
+            this.dataGridViewEcologya.Name = "dataGridViewEcologya";
+            this.dataGridViewEcologya.Size = new System.Drawing.Size(344, 275);
+            this.dataGridViewEcologya.TabIndex = 1;
+            // 
+            // Amount
+            // 
+            this.Amount.HeaderText = "Величина";
+            this.Amount.Name = "Amount";
+            this.Amount.Width = 150;
+            // 
+            // Value
+            // 
+            this.Value.HeaderText = "Значение";
+            this.Value.Name = "Value";
+            this.Value.Width = 150;
             // 
             // TestingEcologya
             // 
@@ -100,21 +154,31 @@
             this.Controls.Add(this.tabControlEcologya);
             this.Name = "TestingEcologya";
             this.Text = "Тестирование по Экологии";
+            this.Load += new System.EventHandler(this.TestingEcologya_Load);
             this.tabControlEcologya.ResumeLayout(false);
             this.tabPageBook.ResumeLayout(false);
+            this.tabPageTester.ResumeLayout(false);
+            this.splitContainer1.Panel1.ResumeLayout(false);
+            this.splitContainer1.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
             this.splitContainer1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewEcologya)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.Timer timerTest;
         private System.Windows.Forms.TabControl tabControlEcologya;
         private System.Windows.Forms.TabPage tabPageBook;
         private System.Windows.Forms.SplitContainer splitContainer1;
         private System.Windows.Forms.TabPage tabPageTester;
+        private System.Windows.Forms.TreeView treeViewEcologya;
+        private System.Windows.Forms.WebBrowser webBrowserEcologya;
+        private System.Windows.Forms.DataGridView dataGridViewEcologya;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Amount;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Value;
     }
 }
 
