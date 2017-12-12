@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace GUI_testing
 {
-    public partial class Form1 : Form
+    public partial class TestingEcologiya : Form
     {
-        public Form1()
+        public TestingEcologiya()
         {
             InitializeComponent();
             

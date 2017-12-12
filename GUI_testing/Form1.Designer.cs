@@ -1,6 +1,6 @@
 ﻿namespace GUI_testing
 {
-    partial class Form1
+    partial class TestingEcologiya
     {
         /// <summary>
         /// Обязательная переменная конструктора.
@@ -32,13 +32,13 @@
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.SuspendLayout();
             // 
-            // Form1
+            // TestingEcologiya
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(641, 297);
-            this.Name = "Form1";
-            this.Text = "Form1";
+            this.ClientSize = new System.Drawing.Size(737, 334);
+            this.Name = "TestingEcologiya";
+            this.Text = "Тестирование по экологии";
             this.ResumeLayout(false);
 
         }
