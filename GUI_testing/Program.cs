@@ -16,7 +16,7 @@ namespace GUI_testing
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new TestingEcologiya());
+            Application.Run(new TestingEcologya());
         }
     }
 }

@@ -1,6 +1,6 @@
 ﻿namespace GUI_testing
 {
-    partial class TestingEcologiya
+    partial class TestingEcologya
     {
         /// <summary>
         /// Обязательная переменная конструктора.
