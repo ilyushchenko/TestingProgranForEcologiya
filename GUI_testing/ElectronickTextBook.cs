@@ -33,7 +33,10 @@ namespace GUI_testing
 
         public void BuildCatalog(TreeView treeView)
         {
-            
+            foreach(var sections in number_sections)
+            {
+                treeView.Nodes[sections].Nodes.Add("dd");
+            }
         }
     }
 }
