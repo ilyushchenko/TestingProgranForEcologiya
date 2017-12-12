@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace GUI_testing
+namespace TestingProgramBusinessLogic
 {
-    class Variants
+    public class Variants
     {
         private List<Variant> variants;
 

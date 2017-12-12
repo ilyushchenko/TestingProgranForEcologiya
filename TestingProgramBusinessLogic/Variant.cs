@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace GUI_testing
+namespace TestingProgramBusinessLogic
 {
-    class Variant
+    public class Variant
     {
         public double MyProperty { get; set; }
     }

@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace GUI_testing
+namespace TestingProgramBusinessLogic
 {
-    class TestManager
+    public class TestManager
     {
         //TODO: Prop:Try count
         //TODO: Prop:Свойство количество тиков
