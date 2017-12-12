@@ -8,11 +8,10 @@ namespace TestingProgramBusinessLogic
 {
     public class TestManager
     {
-        //TODO: Prop:Try count
-        //TODO: Prop:Свойство количество тиков
-
         private int m_tryCount;
         private int m_finishTime;
+
+        private Variants m_variants;
 
         private TestManager() {  }
         
@@ -22,23 +21,24 @@ namespace TestingProgramBusinessLogic
             m_finishTime = finishTime;
 	    }
 
-        //TODO: Старт варианта () -> Time <- CurrentTime + 45 min ==> Variant 
-        public void StartTest()
+        // Получение пользователем данных теста:
+        // TODO: На view-часть не должен передаваться ответ! Мб разделить:      данные -> view-часть;      anwser -> prop
+        public Variant StartTest()
         {
-
+            // return m_variants.< Функция получения данных случайного варианта >;
         }
 
-        //TODO: Tick() <- 
-        //TODO: Метод проверки окончания () <- Bool 
+        // Метод проверки окончания:
         public bool IsTestFinished(int currentTime)
         {
             return currentTime >= m_finishTime ? true : false;
         }
 
-        //TODO: Метод ввода ответа
-        public double GetAnwser()
+        public bool CheckAnwser(double userAnwser, out int tryCount)
         {
-
+            double errorValue = 0.01;
+            // TODO: См. TODO выше xD
+            // return (userAnwser > <правильный ответ> + <правильный ответ> * errorValue) && (userAnwser < <правильный ответ> - <правильный ответ> * errorValue) ? true : tryCount--;
         }
         
     }
