@@ -76,6 +76,10 @@
         /// <summary>
         /// Тип выбросов
         /// </summary>
-        public double Type { get; set; }
+        public string Type { get; set; }
+        /// <summary>
+        /// Ответ
+        /// </summary>
+        public double Answer {get; set; }
     }
 }
