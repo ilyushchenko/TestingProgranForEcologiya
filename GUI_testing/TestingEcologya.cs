@@ -18,7 +18,7 @@ namespace GUI_testing
         {
             InitializeComponent();
         }
-
+        ElectronickTextBook electronic_book = new ElectronickTextBook();
         private void TestingEcologya_Load(object sender, EventArgs e)
         {
 
@@ -39,11 +39,12 @@ namespace GUI_testing
             this.dataGridViewEcologya.Rows.Add("w0, м/с");
             dataGridViewEcologya.Rows[1].Cells[1].ReadOnly = true;
 
-            treeViewEcologya.Nodes.Add(new TreeNode("Загаловок"));
-            treeViewEcologya.Nodes.Add(new TreeNode("Введение"));
-            treeViewEcologya.Nodes[0].Nodes.Add("dddd");
-
-          
+            //treeViewEcologya.Nodes.Add(new TreeNode("Загаловок"));
+            //treeViewEcologya.Nodes.Add(new TreeNode("Введение"));
+            //treeViewEcologya.Nodes[0].Nodes.Add("dddd");
+            
+            electronic_book.ReadTextBook();
+            electronic_book.BuildCatalog(treeViewEcologya);
         }
         
     }
