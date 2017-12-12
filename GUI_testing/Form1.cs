@@ -15,6 +15,7 @@ namespace GUI_testing
         public Form1()
         {
             InitializeComponent();
+            
         }
     }
 }
