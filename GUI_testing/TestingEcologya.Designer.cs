@@ -59,6 +59,7 @@
             this.groupBoxTask = new System.Windows.Forms.GroupBox();
             this.labelExercise = new System.Windows.Forms.Label();
             this.visualStyler1 = new SkinSoft.VisualStyler.VisualStyler(this.components);
+            this.panelTime = new System.Windows.Forms.Panel();
             this.tabControlEcologya.SuspendLayout();
             this.tabPageBook.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
@@ -73,10 +74,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewEcologya)).BeginInit();
             this.groupBoxTask.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.visualStyler1)).BeginInit();
+            this.panelTime.SuspendLayout();
             this.SuspendLayout();
             // 
             // timerTest
             // 
+            this.timerTest.Interval = 1000;
             this.timerTest.Tick += new System.EventHandler(this.timerTest_Tick);
             // 
             // tabControlEcologya
@@ -86,11 +89,12 @@
             this.tabControlEcologya.Controls.Add(this.tabPageTester);
             this.tabControlEcologya.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tabControlEcologya.Location = new System.Drawing.Point(0, 0);
+            this.tabControlEcologya.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tabControlEcologya.Multiline = true;
             this.tabControlEcologya.Name = "tabControlEcologya";
             this.tabControlEcologya.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.tabControlEcologya.SelectedIndex = 0;
-            this.tabControlEcologya.Size = new System.Drawing.Size(787, 602);
+            this.tabControlEcologya.Size = new System.Drawing.Size(789, 564);
             this.tabControlEcologya.TabIndex = 0;
             this.tabControlEcologya.Tag = "XC";
             // 
@@ -98,10 +102,11 @@
             // 
             this.tabPageBook.BackColor = System.Drawing.Color.WhiteSmoke;
             this.tabPageBook.Controls.Add(this.splitContainer1);
-            this.tabPageBook.Location = new System.Drawing.Point(23, 4);
+            this.tabPageBook.Location = new System.Drawing.Point(28, 4);
+            this.tabPageBook.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tabPageBook.Name = "tabPageBook";
-            this.tabPageBook.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageBook.Size = new System.Drawing.Size(752, 587);
+            this.tabPageBook.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabPageBook.Size = new System.Drawing.Size(1026, 671);
             this.tabPageBook.TabIndex = 0;
             this.tabPageBook.Tag = "IC";
             this.tabPageBook.Text = "Электронный учебник";
@@ -109,7 +114,8 @@
             // splitContainer1
             // 
             this.splitContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.splitContainer1.Location = new System.Drawing.Point(3, 3);
+            this.splitContainer1.Location = new System.Drawing.Point(4, 4);
+            this.splitContainer1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.splitContainer1.Name = "splitContainer1";
             // 
             // splitContainer1.Panel1
@@ -121,8 +127,9 @@
             // 
             this.splitContainer1.Panel2.Controls.Add(this.webBrowserEcologya);
             this.splitContainer1.Panel2.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.splitContainer1.Size = new System.Drawing.Size(746, 581);
-            this.splitContainer1.SplitterDistance = 180;
+            this.splitContainer1.Size = new System.Drawing.Size(1018, 663);
+            this.splitContainer1.SplitterDistance = 246;
+            this.splitContainer1.SplitterWidth = 5;
             this.splitContainer1.TabIndex = 0;
             // 
             // treeViewEcologya
@@ -131,8 +138,9 @@
             this.treeViewEcologya.Dock = System.Windows.Forms.DockStyle.Fill;
             this.treeViewEcologya.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
             this.treeViewEcologya.Location = new System.Drawing.Point(0, 0);
+            this.treeViewEcologya.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.treeViewEcologya.Name = "treeViewEcologya";
-            this.treeViewEcologya.Size = new System.Drawing.Size(180, 581);
+            this.treeViewEcologya.Size = new System.Drawing.Size(246, 663);
             this.treeViewEcologya.TabIndex = 0;
             this.treeViewEcologya.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.treeViewEcologya_AfterSelect);
             // 
@@ -142,10 +150,11 @@
             this.webBrowserEcologya.Dock = System.Windows.Forms.DockStyle.Fill;
             this.webBrowserEcologya.IsWebBrowserContextMenuEnabled = false;
             this.webBrowserEcologya.Location = new System.Drawing.Point(0, 0);
-            this.webBrowserEcologya.MinimumSize = new System.Drawing.Size(20, 20);
+            this.webBrowserEcologya.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.webBrowserEcologya.MinimumSize = new System.Drawing.Size(27, 26);
             this.webBrowserEcologya.Name = "webBrowserEcologya";
             this.webBrowserEcologya.ScriptErrorsSuppressed = true;
-            this.webBrowserEcologya.Size = new System.Drawing.Size(562, 581);
+            this.webBrowserEcologya.Size = new System.Drawing.Size(767, 663);
             this.webBrowserEcologya.TabIndex = 0;
             this.webBrowserEcologya.WebBrowserShortcutsEnabled = false;
             this.webBrowserEcologya.NewWindow += new System.ComponentModel.CancelEventHandler(this.webBrowserEcologya_NewWindow);
@@ -204,10 +213,11 @@
             this.tabPageTester.Controls.Add(this.groupBoxControl);
             this.tabPageTester.Controls.Add(this.groupBoxDataVariant);
             this.tabPageTester.Controls.Add(this.groupBoxTask);
-            this.tabPageTester.Location = new System.Drawing.Point(23, 4);
+            this.tabPageTester.Location = new System.Drawing.Point(27, 4);
+            this.tabPageTester.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tabPageTester.Name = "tabPageTester";
-            this.tabPageTester.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageTester.Size = new System.Drawing.Size(760, 594);
+            this.tabPageTester.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabPageTester.Size = new System.Drawing.Size(758, 556);
             this.tabPageTester.TabIndex = 1;
             this.tabPageTester.Tag = "IC";
             this.tabPageTester.Text = "Тестирование";
@@ -215,9 +225,11 @@
             // groupBoxWarning
             // 
             this.groupBoxWarning.Controls.Add(this.labelTask);
-            this.groupBoxWarning.Location = new System.Drawing.Point(382, 8);
+            this.groupBoxWarning.Location = new System.Drawing.Point(390, 10);
+            this.groupBoxWarning.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.groupBoxWarning.Name = "groupBoxWarning";
-            this.groupBoxWarning.Size = new System.Drawing.Size(353, 176);
+            this.groupBoxWarning.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBoxWarning.Size = new System.Drawing.Size(350, 230);
             this.groupBoxWarning.TabIndex = 5;
             this.groupBoxWarning.TabStop = false;
             this.groupBoxWarning.Text = "Внимание";
@@ -226,7 +238,8 @@
             // 
             this.labelTask.AutoSize = true;
             this.labelTask.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.labelTask.Location = new System.Drawing.Point(5, 23);
+            this.labelTask.Location = new System.Drawing.Point(7, 30);
+            this.labelTask.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelTask.Name = "labelTask";
             this.labelTask.Size = new System.Drawing.Size(342, 135);
             this.labelTask.TabIndex = 0;
@@ -234,16 +247,17 @@
             // 
             // groupBoxControl
             // 
+            this.groupBoxControl.Controls.Add(this.panelTime);
             this.groupBoxControl.Controls.Add(this.labelResult);
             this.groupBoxControl.Controls.Add(this.butResult);
             this.groupBoxControl.Controls.Add(this.textResult);
             this.groupBoxControl.Controls.Add(this.labelAttemptHint);
-            this.groupBoxControl.Controls.Add(this.labelTime);
-            this.groupBoxControl.Controls.Add(this.labelTimeHint);
             this.groupBoxControl.Controls.Add(this.butStart);
-            this.groupBoxControl.Location = new System.Drawing.Point(384, 190);
+            this.groupBoxControl.Location = new System.Drawing.Point(391, 248);
+            this.groupBoxControl.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.groupBoxControl.Name = "groupBoxControl";
-            this.groupBoxControl.Size = new System.Drawing.Size(354, 231);
+            this.groupBoxControl.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBoxControl.Size = new System.Drawing.Size(350, 291);
             this.groupBoxControl.TabIndex = 4;
             this.groupBoxControl.TabStop = false;
             this.groupBoxControl.Text = "Управление";
@@ -251,18 +265,20 @@
             // labelResult
             // 
             this.labelResult.AutoSize = true;
-            this.labelResult.Location = new System.Drawing.Point(16, 119);
+            this.labelResult.Location = new System.Drawing.Point(8, 155);
+            this.labelResult.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelResult.Name = "labelResult";
-            this.labelResult.Size = new System.Drawing.Size(62, 13);
+            this.labelResult.Size = new System.Drawing.Size(73, 17);
             this.labelResult.TabIndex = 6;
             this.labelResult.Text = "Результат:";
             // 
             // butResult
             // 
             this.butResult.Enabled = false;
-            this.butResult.Location = new System.Drawing.Point(258, 113);
+            this.butResult.Location = new System.Drawing.Point(178, 148);
+            this.butResult.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.butResult.Name = "butResult";
-            this.butResult.Size = new System.Drawing.Size(75, 23);
+            this.butResult.Size = new System.Drawing.Size(100, 30);
             this.butResult.TabIndex = 5;
             this.butResult.Text = "Ответ";
             this.butResult.UseVisualStyleBackColor = true;
@@ -271,43 +287,48 @@
             // textResult
             // 
             this.textResult.Enabled = false;
-            this.textResult.Location = new System.Drawing.Point(84, 116);
+            this.textResult.Location = new System.Drawing.Point(89, 152);
+            this.textResult.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.textResult.Name = "textResult";
-            this.textResult.Size = new System.Drawing.Size(168, 20);
+            this.textResult.Size = new System.Drawing.Size(81, 25);
             this.textResult.TabIndex = 4;
             // 
             // labelAttemptHint
             // 
             this.labelAttemptHint.AutoSize = true;
-            this.labelAttemptHint.Location = new System.Drawing.Point(16, 40);
+            this.labelAttemptHint.Location = new System.Drawing.Point(8, 99);
+            this.labelAttemptHint.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelAttemptHint.Name = "labelAttemptHint";
-            this.labelAttemptHint.Size = new System.Drawing.Size(210, 13);
+            this.labelAttemptHint.Size = new System.Drawing.Size(255, 17);
             this.labelAttemptHint.TabIndex = 3;
             this.labelAttemptHint.Text = "Оставшиеся количество попыток 3 из 3";
             // 
             // labelTime
             // 
             this.labelTime.AutoSize = true;
-            this.labelTime.Location = new System.Drawing.Point(96, 19);
+            this.labelTime.Location = new System.Drawing.Point(134, 8);
+            this.labelTime.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelTime.Name = "labelTime";
-            this.labelTime.Size = new System.Drawing.Size(43, 13);
+            this.labelTime.Size = new System.Drawing.Size(56, 17);
             this.labelTime.TabIndex = 2;
-            this.labelTime.Text = "0:00:00";
+            this.labelTime.Text = "00:00:00";
             // 
             // labelTimeHint
             // 
             this.labelTimeHint.AutoSize = true;
-            this.labelTimeHint.Location = new System.Drawing.Point(16, 19);
+            this.labelTimeHint.Location = new System.Drawing.Point(4, 7);
+            this.labelTimeHint.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelTimeHint.Name = "labelTimeHint";
-            this.labelTimeHint.Size = new System.Drawing.Size(74, 13);
+            this.labelTimeHint.Size = new System.Drawing.Size(131, 17);
             this.labelTimeHint.TabIndex = 1;
-            this.labelTimeHint.Text = "Время теста:";
+            this.labelTimeHint.Text = "Оставшееся время:";
             // 
             // butStart
             // 
-            this.butStart.Location = new System.Drawing.Point(236, 18);
+            this.butStart.Location = new System.Drawing.Point(213, 25);
+            this.butStart.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.butStart.Name = "butStart";
-            this.butStart.Size = new System.Drawing.Size(97, 35);
+            this.butStart.Size = new System.Drawing.Size(129, 46);
             this.butStart.TabIndex = 0;
             this.butStart.Text = "Начать тест";
             this.butStart.UseVisualStyleBackColor = true;
@@ -316,9 +337,11 @@
             // groupBoxDataVariant
             // 
             this.groupBoxDataVariant.Controls.Add(this.dataGridViewEcologya);
-            this.groupBoxDataVariant.Location = new System.Drawing.Point(6, 123);
+            this.groupBoxDataVariant.Location = new System.Drawing.Point(8, 161);
+            this.groupBoxDataVariant.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.groupBoxDataVariant.Name = "groupBoxDataVariant";
-            this.groupBoxDataVariant.Size = new System.Drawing.Size(370, 392);
+            this.groupBoxDataVariant.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBoxDataVariant.Size = new System.Drawing.Size(368, 378);
             this.groupBoxDataVariant.TabIndex = 3;
             this.groupBoxDataVariant.TabStop = false;
             this.groupBoxDataVariant.Text = "Исходнные данные по варианту";
@@ -329,11 +352,12 @@
             this.dataGridViewEcologya.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Amount,
             this.Value});
-            this.dataGridViewEcologya.Location = new System.Drawing.Point(12, 23);
+            this.dataGridViewEcologya.Location = new System.Drawing.Point(12, 30);
+            this.dataGridViewEcologya.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dataGridViewEcologya.Name = "dataGridViewEcologya";
             this.dataGridViewEcologya.ReadOnly = true;
             this.dataGridViewEcologya.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
-            this.dataGridViewEcologya.Size = new System.Drawing.Size(344, 355);
+            this.dataGridViewEcologya.Size = new System.Drawing.Size(344, 333);
             this.dataGridViewEcologya.TabIndex = 1;
             // 
             // Amount
@@ -353,9 +377,11 @@
             // groupBoxTask
             // 
             this.groupBoxTask.Controls.Add(this.labelExercise);
-            this.groupBoxTask.Location = new System.Drawing.Point(6, 8);
+            this.groupBoxTask.Location = new System.Drawing.Point(8, 10);
+            this.groupBoxTask.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.groupBoxTask.Name = "groupBoxTask";
-            this.groupBoxTask.Size = new System.Drawing.Size(370, 111);
+            this.groupBoxTask.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBoxTask.Size = new System.Drawing.Size(375, 145);
             this.groupBoxTask.TabIndex = 2;
             this.groupBoxTask.TabStop = false;
             this.groupBoxTask.Text = "Задание по варианту";
@@ -364,7 +390,8 @@
             // 
             this.labelExercise.AutoSize = true;
             this.labelExercise.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.labelExercise.Location = new System.Drawing.Point(5, 19);
+            this.labelExercise.Location = new System.Drawing.Point(6, 25);
+            this.labelExercise.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelExercise.Name = "labelExercise";
             this.labelExercise.Size = new System.Drawing.Size(361, 75);
             this.labelExercise.TabIndex = 0;
@@ -376,13 +403,29 @@
             this.visualStyler1.License = ((SkinSoft.VisualStyler.Licensing.VisualStylerLicense)(resources.GetObject("visualStyler1.License")));
             this.visualStyler1.LoadVisualStyle(null, "Kupo XP 2 Green (Normal).vssf");
             // 
+            // panelTime
+            // 
+            this.panelTime.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panelTime.Controls.Add(this.labelTime);
+            this.panelTime.Controls.Add(this.labelTimeHint);
+            this.panelTime.Location = new System.Drawing.Point(7, 37);
+            this.panelTime.Name = "panelTime";
+            this.panelTime.Size = new System.Drawing.Size(199, 34);
+            this.panelTime.TabIndex = 7;
+            // 
             // TestingEcologya
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(787, 602);
+            this.ClientSize = new System.Drawing.Size(789, 564);
             this.Controls.Add(this.tabControlEcologya);
+            this.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.MaximizeBox = false;
             this.Name = "TestingEcologya";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Тестирование по Экологии";
             this.Load += new System.EventHandler(this.TestingEcologya_Load);
             this.tabControlEcologya.ResumeLayout(false);
@@ -402,6 +445,8 @@
             this.groupBoxTask.ResumeLayout(false);
             this.groupBoxTask.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.visualStyler1)).EndInit();
+            this.panelTime.ResumeLayout(false);
+            this.panelTime.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -437,6 +482,7 @@
         private System.Windows.Forms.ToolStripMenuItem CloseCatalogToolStripMenuItem;
         private SkinSoft.VisualStyler.VisualStyler visualStyler1;
         private System.Windows.Forms.Label labelExercise;
+        private System.Windows.Forms.Panel panelTime;
     }
 }
 

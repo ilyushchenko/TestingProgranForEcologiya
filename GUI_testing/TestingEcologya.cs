@@ -21,25 +21,23 @@ namespace GUI_testing
         ElectronickTextBook electronic_book = new ElectronickTextBook();
         DateTime start, stop;
 
-        private TestManager test_manager = new TestManager();
+        private TestManager test_manager;
         private void TestingEcologya_Load(object sender, EventArgs e)
         {
-            //test_manager.Messaging += test_manager_Messaging;
+            test_manager = new TestManager(new Variants());
+            
+            test_manager.Messaging += test_manager_Messaging;
             Variant variant = new Variant();
             BuildTabelVariant(variant);
-
             BuildContentBook(electronic_book.ReadTextBook());
             webBrowserEcologya.Url = new Uri(Path.GetFullPath("html\\start.html"));
-            Variants variants = new Variants();
-            test_manager.Load(variants);
+           
         }
 
         private void test_manager_Messaging(object sendler, TestingEventArgs e)
         {
             switch (e.TestStatus)
-            {
-                case TestStatus.Start:  
-                    break; 
+            { 
                 case TestStatus.EndOfTime:
                     break;
                 case TestStatus.EndOfTryCount:
@@ -99,6 +97,8 @@ namespace GUI_testing
 
             Variant variant = test_manager.StartTest(3, 45);
             BuildTabelVariant(variant);
+
+           // labelTime.Text = test_manager.Countdown.ToString();
         }
 
         private void BuildTabelVariant(Variant variant)
@@ -122,8 +122,8 @@ namespace GUI_testing
         private void timerTest_Tick(object sender, EventArgs e)
         {
             TimeSpan time = (DateTime.Now - start).Duration();
-            labelTime.Text = time.ToString("hh\\:mm\\:ss");
-            
+            //labelTime.Text = time.ToString("hh\\:mm\\:ss");
+            labelTime.Text = test_manager.Countdown.ToString();
             test_manager.Tick();
             if (test_manager.IsTestFinished())
             {
