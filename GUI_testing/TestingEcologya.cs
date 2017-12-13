@@ -20,8 +20,10 @@ namespace GUI_testing
         }
         ElectronickTextBook electronic_book = new ElectronickTextBook();
         DateTime start, stop;
+        private TestManager test_manager = new TestManager();
         private void TestingEcologya_Load(object sender, EventArgs e)
         {
+            
             //Пример использования по циклу можно построить таблицк с вариантом
             this.dataGridViewEcologya.Rows.Add("№ Варианта");
             this.dataGridViewEcologya.Rows.Add("Вещество");
@@ -95,6 +97,7 @@ namespace GUI_testing
             timerTest.Start();
             start = DateTime.Now;
             stop = DateTime.Parse("00:45:00");
+            Variant varaiant = test_manager.StartTest(3, 45);
         }
        
         private void timerTest_Tick(object sender, EventArgs e)
