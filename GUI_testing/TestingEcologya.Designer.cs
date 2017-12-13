@@ -56,6 +56,7 @@
             this.ZoomPlusToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ZoomMinusToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ZoomNormalРазмерToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.CloseCatalogToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tabControlEcologya.SuspendLayout();
             this.tabPageBook.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
@@ -153,9 +154,10 @@
             this.contextMenuWebBrowser.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.ZoomPlusToolStripMenuItem,
             this.ZoomMinusToolStripMenuItem,
-            this.ZoomNormalРазмерToolStripMenuItem});
+            this.ZoomNormalРазмерToolStripMenuItem,
+            this.CloseCatalogToolStripMenuItem});
             this.contextMenuWebBrowser.Name = "contextMenuWebBrowser";
-            this.contextMenuWebBrowser.Size = new System.Drawing.Size(173, 70);
+            this.contextMenuWebBrowser.Size = new System.Drawing.Size(217, 108);
             // 
             // tabPageTester
             // 
@@ -319,27 +321,39 @@
             // 
             // ZoomPlusToolStripMenuItem
             // 
-            this.ZoomPlusToolStripMenuItem.Image = global::GUI_testing.Properties.Resources.zoomplus16;
+            this.ZoomPlusToolStripMenuItem.Image = global::GUI_testing.Properties.Resources.Zoom_In;
+            this.ZoomPlusToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.ZoomPlusToolStripMenuItem.Name = "ZoomPlusToolStripMenuItem";
-            this.ZoomPlusToolStripMenuItem.Size = new System.Drawing.Size(172, 22);
+            this.ZoomPlusToolStripMenuItem.Size = new System.Drawing.Size(216, 26);
             this.ZoomPlusToolStripMenuItem.Text = "Увеличить";
             this.ZoomPlusToolStripMenuItem.Click += new System.EventHandler(this.ZoomPlusToolStripMenuItem_Click);
             // 
             // ZoomMinusToolStripMenuItem
             // 
-            this.ZoomMinusToolStripMenuItem.Image = global::GUI_testing.Properties.Resources.zoomminus;
+            this.ZoomMinusToolStripMenuItem.Image = global::GUI_testing.Properties.Resources.Zoom_Out;
+            this.ZoomMinusToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.ZoomMinusToolStripMenuItem.Name = "ZoomMinusToolStripMenuItem";
-            this.ZoomMinusToolStripMenuItem.Size = new System.Drawing.Size(172, 22);
+            this.ZoomMinusToolStripMenuItem.Size = new System.Drawing.Size(216, 26);
             this.ZoomMinusToolStripMenuItem.Text = "Уменьшить";
             this.ZoomMinusToolStripMenuItem.Click += new System.EventHandler(this.ZoomMinusToolStripMenuItem_Click);
             // 
             // ZoomNormalРазмерToolStripMenuItem
             // 
-            this.ZoomNormalРазмерToolStripMenuItem.Image = global::GUI_testing.Properties.Resources.find;
+            this.ZoomNormalРазмерToolStripMenuItem.Image = global::GUI_testing.Properties.Resources.Search__1_;
+            this.ZoomNormalРазмерToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.ZoomNormalРазмерToolStripMenuItem.Name = "ZoomNormalРазмерToolStripMenuItem";
-            this.ZoomNormalРазмерToolStripMenuItem.Size = new System.Drawing.Size(172, 22);
+            this.ZoomNormalРазмерToolStripMenuItem.Size = new System.Drawing.Size(216, 26);
             this.ZoomNormalРазмерToolStripMenuItem.Text = "Обычный размер";
             this.ZoomNormalРазмерToolStripMenuItem.Click += new System.EventHandler(this.ZoomNormalРазмерToolStripMenuItem_Click);
+            // 
+            // CloseCatalogToolStripMenuItem
+            // 
+            this.CloseCatalogToolStripMenuItem.Image = global::GUI_testing.Properties.Resources.Button_First;
+            this.CloseCatalogToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.CloseCatalogToolStripMenuItem.Name = "CloseCatalogToolStripMenuItem";
+            this.CloseCatalogToolStripMenuItem.Size = new System.Drawing.Size(216, 26);
+            this.CloseCatalogToolStripMenuItem.Text = "Закрыть дерево каталога";
+            this.CloseCatalogToolStripMenuItem.Click += new System.EventHandler(this.CloseCatalogToolStripMenuItem_Click);
             // 
             // TestingEcologya
             // 
@@ -396,6 +410,7 @@
         private System.Windows.Forms.ToolStripMenuItem ZoomPlusToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem ZoomMinusToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem ZoomNormalРазмерToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem CloseCatalogToolStripMenuItem;
     }
 }
 

@@ -129,6 +129,22 @@ namespace GUI_testing
         {
             webBrowserEcologya.Document.Body.Style = "zoom:100%;";
         }
+
+        private void CloseCatalogToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (splitContainer1.Panel1Collapsed)
+            {
+                splitContainer1.Panel1Collapsed = false;
+                CloseCatalogToolStripMenuItem.Text = "Свернуть деерево каталога";
+                CloseCatalogToolStripMenuItem.Image = GUI_testing.Properties.Resources.Button_First;
+            }
+            else
+            {
+                splitContainer1.Panel1Collapsed = true;
+                CloseCatalogToolStripMenuItem.Text = "Развернуть деерево каталога";
+                CloseCatalogToolStripMenuItem.Image = GUI_testing.Properties.Resources.Button_End;
+            }
+        }
         
     }
 }

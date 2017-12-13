@@ -100,5 +100,23 @@
   <ItemGroup>
     <None Include="Resources\zoomplus16.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Button_First.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Button_End.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Zoom_In.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Zoom_Out.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Search.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Search %281%29.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
