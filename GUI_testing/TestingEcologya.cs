@@ -14,7 +14,6 @@ namespace GUI_testing
 {
     public partial class TestingEcologya : Form
     {
-        ElectronickTextBook electronic_book = new ElectronickTextBook();
         private TestManager test_manager;
 
         public TestingEcologya()
@@ -22,13 +21,19 @@ namespace GUI_testing
             test_manager = new TestManager(new Variants());
             test_manager.Messaging += test_manager_Messaging;
             InitializeComponent();
+            //panelTester.Location = new Point(
+            //this.ClientSize.Width / 2 - panelTester.Size.Width / 2,
+            // this.ClientSize.Height / 2 - panelTester.Size.Height / 2);
+            //panelTester.Anchor = AnchorStyles.None;
         }
 
         private void TestingEcologya_Load(object sender, EventArgs e)
         {
+            ElectronickTextBook electronic_book = new ElectronickTextBook();
             BuildTabelVariant(new Variant());
             BuildContentBook(electronic_book.ReadTextBook());
             webBrowserEcologya.Url = new Uri(Path.GetFullPath("html\\start.html"));
+            
         }
 
         private void test_manager_Messaging(object sendler, TestingEventArgs e)
@@ -190,6 +195,7 @@ namespace GUI_testing
             e.Cancel = true;
         }
         #endregion
+
 
     }
 }
