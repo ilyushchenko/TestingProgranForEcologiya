@@ -8,8 +8,12 @@ namespace TestingProgramBusinessLogic
 {
     public class TestManager
     {
+        public delegate void MessagingDelegate(object sendler, TestingEventArgs e);
+        public event MessagingDelegate Messaging = (obj, e) => { };
+
         public int TryCount { get; private set; }
         public int Countdown { get; private set; }
+
 
         private Random rnd = new Random();
         private List<Variant> m_variants;
@@ -78,9 +82,10 @@ namespace TestingProgramBusinessLogic
             if (!result)
             {
                 TryCount--;
+                Messaging.Invoke(this, new TestingEventArgs(TestStatus.WrongAnswer, String.Format("Неправильный ответ!\nОставшееся количество попыток: {0}", TryCount)));
+
             }
             return result;
         }
-        
     }
 }
