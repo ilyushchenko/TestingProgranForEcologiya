@@ -107,6 +107,28 @@ namespace GUI_testing
                 butResult.Enabled = false;
             }
         }
+
+        private void tabControlEcologya_Click(object sender, EventArgs e)
+        {
+            
+                
+            
+        }
+
+        private void ZoomPlusToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            webBrowserEcologya.Document.Body.Style = "zoom:125%;";
+        }
+
+        private void ZoomMinusToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            webBrowserEcologya.Document.Body.Style = "zoom:90%;";
+        }
+
+        private void ZoomNormalРазмерToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            webBrowserEcologya.Document.Body.Style = "zoom:100%;";
+        }
         
     }
 }
