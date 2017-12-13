@@ -50,67 +50,36 @@ namespace GUI_testing
 
         private void BuildContentBook(List<ContentsElectronickBook> contents_electronic_book)
         {
-           // int[] list = new int[] { 5, 12, 14, 21, 28 };
-
+            int[] list = new int[] { 2,5, 12, 14, 21, 28 };
+            
             foreach (var content_book in contents_electronic_book)
             {
-               // int z = 2;
-                //if (content_book.number_subsections == 0)
-                //{
-                //    treeViewEcologya.Nodes.Add(content_book.title_division).Tag = content_book.link_site;
-                //    treeViewEcologya.Tag = content_book.link_site;
-                //}
-                CheckContent(content_book);
-                    //if (content_book.number_subsections == list[k])
-                    //{
-                    //    treeViewEcologya.Nodes[z].Nodes.Add(content_book.title_division).Tag = content_book.link_site;
-                    //    // treeViewEcologya.Nodes[z].Nodes[0].Tag = content_book.link_site;
-                    //}
-                //  z++;
-            }
-        }
-        private void CheckContent(ContentsElectronickBook content_book)
-        {
-             switch (content_book.number_subsections)
+                int z = 2;
+                if (content_book.number_subsections == 0)
                 {
-                    case 0:
-                        {
-                            treeViewEcologya.Nodes.Add(content_book.title_division).Tag = content_book.link_site;
-                            treeViewEcologya.Tag = content_book.link_site; break;
-                        }
-                    case 2:
-                        {
-                            treeViewEcologya.Nodes[2].Nodes.Add(content_book.title_division).Tag = content_book.link_site;
-                            break;
-                        }
-                    case 5:
-                        {
-                            treeViewEcologya.Nodes[3].Nodes.Add(content_book.title_division).Tag = content_book.link_site;
-                            break;
-                        }
-                    case 12:
-                        {
-                            treeViewEcologya.Nodes[4].Nodes.Add(content_book.title_division).Tag = content_book.link_site;
-                            break;
-                        }
-                    case 14:
-                        {
-                            treeViewEcologya.Nodes[5].Nodes.Add(content_book.title_division).Tag = content_book.link_site;
-                            break;
-                        }
-                    case 21:
-                        {
-                            treeViewEcologya.Nodes[6].Nodes.Add(content_book.title_division).Tag = content_book.link_site;
-                            break;
-                        }
-                    case 28:
-                        {
-                            treeViewEcologya.Nodes[7].Nodes.Add(content_book.title_division).Tag = content_book.link_site;
-                            break;
-                        }
+                    treeViewEcologya.Nodes.Add(content_book.title_division).Tag = content_book.link_site;
+                    treeViewEcologya.Tag = content_book.link_site;
                 }
-        }
+                for (int k = 0; k < 6; k++)
+                {
+                    if (content_book.number_subsections == list[k])
+                    {
+                        treeViewEcologya.Nodes[z].Nodes.Add(content_book.title_division).Tag = content_book.link_site;
+                    }
+                    z++;
+                }
+                //for (int k = 2; k < 6; k++)
+                //{
 
+                //if (content_book.number_subsections == content_book.number_sections && content_book.number_subsections != 0)
+                //{
+                //    treeViewEcologya.Nodes[z].Nodes.Add(content_book.title_division).Tag = content_book.link_site;
+                //}
+                //z++;
+                //}
+                
+            }
+        }    
         private void treeViewEcologya_AfterSelect(object sender, TreeViewEventArgs e)
         {
            webBrowserEcologya.Url = new Uri(Path.GetFullPath("html\\" + Convert.ToString(e.Node.Tag)));
