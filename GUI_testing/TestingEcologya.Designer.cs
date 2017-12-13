@@ -90,7 +90,7 @@
             this.tabControlEcologya.Name = "tabControlEcologya";
             this.tabControlEcologya.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.tabControlEcologya.SelectedIndex = 0;
-            this.tabControlEcologya.Size = new System.Drawing.Size(779, 595);
+            this.tabControlEcologya.Size = new System.Drawing.Size(787, 602);
             this.tabControlEcologya.TabIndex = 0;
             this.tabControlEcologya.Tag = "XC";
             // 
@@ -207,7 +207,7 @@
             this.tabPageTester.Location = new System.Drawing.Point(23, 4);
             this.tabPageTester.Name = "tabPageTester";
             this.tabPageTester.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageTester.Size = new System.Drawing.Size(744, 580);
+            this.tabPageTester.Size = new System.Drawing.Size(760, 594);
             this.tabPageTester.TabIndex = 1;
             this.tabPageTester.Tag = "IC";
             this.tabPageTester.Text = "Тестирование";
@@ -259,15 +259,18 @@
             // 
             // butResult
             // 
+            this.butResult.Enabled = false;
             this.butResult.Location = new System.Drawing.Point(258, 113);
             this.butResult.Name = "butResult";
             this.butResult.Size = new System.Drawing.Size(75, 23);
             this.butResult.TabIndex = 5;
             this.butResult.Text = "Ответ";
             this.butResult.UseVisualStyleBackColor = true;
+            this.butResult.Click += new System.EventHandler(this.butResult_Click);
             // 
             // textResult
             // 
+            this.textResult.Enabled = false;
             this.textResult.Location = new System.Drawing.Point(84, 116);
             this.textResult.Name = "textResult";
             this.textResult.Size = new System.Drawing.Size(168, 20);
@@ -278,9 +281,9 @@
             this.labelAttemptHint.AutoSize = true;
             this.labelAttemptHint.Location = new System.Drawing.Point(16, 40);
             this.labelAttemptHint.Name = "labelAttemptHint";
-            this.labelAttemptHint.Size = new System.Drawing.Size(85, 13);
+            this.labelAttemptHint.Size = new System.Drawing.Size(210, 13);
             this.labelAttemptHint.TabIndex = 3;
-            this.labelAttemptHint.Text = "Попытка 0 из 3";
+            this.labelAttemptHint.Text = "Оставшиеся количество попыток 3 из 3";
             // 
             // labelTime
             // 
@@ -377,7 +380,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(779, 595);
+            this.ClientSize = new System.Drawing.Size(787, 602);
             this.Controls.Add(this.tabControlEcologya);
             this.Name = "TestingEcologya";
             this.Text = "Тестирование по Экологии";

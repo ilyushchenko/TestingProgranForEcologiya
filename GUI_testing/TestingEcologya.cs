@@ -20,37 +20,38 @@ namespace GUI_testing
         }
         ElectronickTextBook electronic_book = new ElectronickTextBook();
         DateTime start, stop;
+
         private TestManager test_manager = new TestManager();
         private void TestingEcologya_Load(object sender, EventArgs e)
         {
-            
-            //Пример использования по циклу можно построить таблицк с вариантом
-            this.dataGridViewEcologya.Rows.Add("№ Варианта");
-            this.dataGridViewEcologya.Rows.Add("Вещество");
-            this.dataGridViewEcologya.Rows.Add("ПДК, мг/м^3");
-            this.dataGridViewEcologya.Rows.Add("Cф, мг/м^3");
-            this.dataGridViewEcologya.Rows.Add("Н, м");
-            this.dataGridViewEcologya.Rows.Add("F");
-            this.dataGridViewEcologya.Rows.Add("m");
-            this.dataGridViewEcologya.Rows.Add("n");
-            this.dataGridViewEcologya.Rows.Add("Mx, % от ПДВ");
-            this.dataGridViewEcologya.Rows.Add("Температура среды");
-            this.dataGridViewEcologya.Rows.Add("Диаметр трубы");
-            this.dataGridViewEcologya.Rows.Add("a");
-            this.dataGridViewEcologya.Rows.Add("b");
-            this.dataGridViewEcologya.Rows.Add("Mx, % от ПДВ");
-            this.dataGridViewEcologya.Rows.Add("w0, м/с", "1.5");
-            //for (int k = 0; k < 10; k++ )
-            //{
-            //    this.dataGridViewEcologya.Rows.Add();
-            //}
+            //test_manager.Messaging += test_manager_Messaging;
+            Variant variant = new Variant();
+            BuildTabelVariant(variant);
+
             BuildContentBook(electronic_book.ReadTextBook());
             webBrowserEcologya.Url = new Uri(Path.GetFullPath("html\\start.html"));
             Variants variants = new Variants();
-
-           
-
             test_manager.Load(variants);
+        }
+
+        private void test_manager_Messaging(object sendler, TestingEventArgs e)
+        {
+            switch (e.TestStatus)
+            {
+                case TestStatus.Start:  
+                    break; 
+                case TestStatus.EndOfTime:
+                    break;
+                case TestStatus.EndOfTryCount:
+                    break;
+                case TestStatus.WrongAnswer:
+                    break;
+                case TestStatus.Complete:
+                    break;
+                default:
+                    break;
+            }
+               // MessageBox.Showe.TestStatus);
         }
 
         private void BuildContentBook(List<ContentsElectronickBook> contents_electronic_book)
@@ -83,55 +84,82 @@ namespace GUI_testing
                 }
                 index++;
             }
-        }
-        private void treeViewEcologya_AfterSelect(object sender, TreeViewEventArgs e)
-        {
-           webBrowserEcologya.Url = new Uri(Path.GetFullPath("html\\" + Convert.ToString(e.Node.Tag)));
-          // MessageBox.Show(Path.GetFullPath("html\\" + Convert.ToString(e.Node.Tag)));
-        }
-
-        private void webBrowserEcologya_NewWindow(object sender, CancelEventArgs e)
-        {
-            ((WebBrowser)sender).Url = new Uri(((WebBrowser)sender).StatusText);
-            e.Cancel = true;
-        }
-
+        } 
         private void butStart_Click(object sender, EventArgs e)
         {
+            textResult.Enabled = true;
+            textResult.Clear();
+            textResult.Focus();
+            butResult.Enabled = true;
+
             timerTest.Enabled = true;
             timerTest.Start();
             start = DateTime.Now;
             stop = DateTime.Parse("00:45:00");
-            Variant varaiant = test_manager.StartTest(3, 45);
-            dataGridViewEcologya.Rows.Clear();
-            this.dataGridViewEcologya.Rows.Add("№ Варианта", varaiant.VariantNuimber);
-            this.dataGridViewEcologya.Rows.Add("Вещество", varaiant.Material);
-            this.dataGridViewEcologya.Rows.Add("ПДК, мг/м^3", varaiant.PDK);
-            this.dataGridViewEcologya.Rows.Add("Cф, мг/м^3", varaiant.C_f);
-            this.dataGridViewEcologya.Rows.Add("Н, м", varaiant.H);
-            this.dataGridViewEcologya.Rows.Add("F", varaiant.F);
-            this.dataGridViewEcologya.Rows.Add("m", varaiant.M);
-            this.dataGridViewEcologya.Rows.Add("n", varaiant.N);
-            this.dataGridViewEcologya.Rows.Add("Mx, % от ПДВ",varaiant.Mx);
-            this.dataGridViewEcologya.Rows.Add("Температура среды", varaiant.TemperatureAvg);
-            this.dataGridViewEcologya.Rows.Add("Диаметр трубы",varaiant.Diameter);
-            this.dataGridViewEcologya.Rows.Add("a",varaiant.SideA);
-            this.dataGridViewEcologya.Rows.Add("b", varaiant.SideB);
-            this.dataGridViewEcologya.Rows.Add("w0, м/с", varaiant.W0); 
+
+            Variant variant = test_manager.StartTest(3, 45);
+            BuildTabelVariant(variant);
         }
-       
+
+        private void BuildTabelVariant(Variant variant)
+        {
+            dataGridViewEcologya.Rows.Clear();
+            this.dataGridViewEcologya.Rows.Add("№ Варианта", variant.VariantNuimber);
+            this.dataGridViewEcologya.Rows.Add("Вещество", variant.Material);
+            this.dataGridViewEcologya.Rows.Add("ПДК, мг/м^3", variant.PDK);
+            this.dataGridViewEcologya.Rows.Add("Cф, мг/м^3", variant.C_f);
+            this.dataGridViewEcologya.Rows.Add("Н, м", variant.H);
+            this.dataGridViewEcologya.Rows.Add("F", variant.F);
+            this.dataGridViewEcologya.Rows.Add("m", variant.M);
+            this.dataGridViewEcologya.Rows.Add("n", variant.N);
+            this.dataGridViewEcologya.Rows.Add("Mx, % от ПДВ", variant.Mx);
+            this.dataGridViewEcologya.Rows.Add("Температура среды", variant.TemperatureAvg);
+            this.dataGridViewEcologya.Rows.Add("Диаметр трубы", variant.Diameter);
+            this.dataGridViewEcologya.Rows.Add("a", variant.SideA);
+            this.dataGridViewEcologya.Rows.Add("b", variant.SideB);
+            this.dataGridViewEcologya.Rows.Add("w0, м/с", variant.W0); 
+        }
         private void timerTest_Tick(object sender, EventArgs e)
         {
             TimeSpan time = (DateTime.Now - start).Duration();
             labelTime.Text = time.ToString("hh\\:mm\\:ss");
-            if (time.Minutes  == stop.Minute)
+            
+            test_manager.Tick();
+            if (test_manager.IsTestFinished())
             {
                 timerTest.Stop();
-                MessageBox.Show("Тест не решен!");
+                MessageBox.Show("Тест остановлен!");
                 butStart.Enabled = false;
                 butResult.Enabled = false;
             }
+            
+            //if (time.Minutes  == stop.Minute)
+            //{
+            //    timerTest.Stop();
+            //    MessageBox.Show("Тест не решен!");
+            //    butStart.Enabled = false;
+            //    butResult.Enabled = false;
+            //}
         }
+
+        private void butResult_Click(object sender, EventArgs e)
+        {
+           if ( test_manager.CheckAnwser(double.Parse(textResult.Text)) == true)
+           {
+               timerTest.Stop();
+               butStart.Enabled = false;
+               butResult.Enabled = false;
+               textResult.Enabled = false;
+               MessageBox.Show("Тест выполнен успешно!");
+               
+           } else if (test_manager.TryCount >0)
+           {
+               MessageBox.Show(string.Format("Ответ неправильный! \nОставшиеся количество попыток {0}", test_manager.TryCount.ToString()));
+               labelAttemptHint.Text = string.Format("Оставшиеся количество попыток {0} из 3", test_manager.TryCount.ToString());
+           } 
+        }
+
+        #region События для WebBrowser
         private void ZoomPlusToolStripMenuItem_Click(object sender, EventArgs e)
         {
             webBrowserEcologya.Document.Body.Style = "zoom:125%;";
@@ -162,6 +190,16 @@ namespace GUI_testing
                 CloseCatalogToolStripMenuItem.Image = GUI_testing.Properties.Resources.Button_End;
             }
         }
+        private void treeViewEcologya_AfterSelect(object sender, TreeViewEventArgs e)
+        {
+            webBrowserEcologya.Url = new Uri(Path.GetFullPath("html\\" + Convert.ToString(e.Node.Tag)));
+        }
+        private void webBrowserEcologya_NewWindow(object sender, CancelEventArgs e)
+        {
+            ((WebBrowser)sender).Url = new Uri(((WebBrowser)sender).StatusText);
+            e.Cancel = true;
+        }
+        #endregion
         
     }
 }
