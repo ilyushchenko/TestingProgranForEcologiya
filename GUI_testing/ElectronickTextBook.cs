@@ -37,5 +37,21 @@ namespace GUI_testing
             return list_contents_books;
         }
 
+        //public int[] ListDirectory()
+        //{
+        //    int[] list_directory = new int[list_contents_books.Count];
+        //    int index = 0;
+        //    for (int k=0; k<=list_contents_books.Count; k++)
+        //    {
+        //        if (list_contents_books[k].number_subsections != 0)
+        //        {
+        //            list_directory[index] = list_contents_books[k].number_subsections;
+        //            index++;
+        //        }
+                
+        //    }
+        //    return list_directory;
+        //}
+
     }
 }

@@ -42,44 +42,40 @@ namespace GUI_testing
             //{
             //    this.dataGridViewEcologya.Rows.Add();
             //}
-               // dataGridViewEcologya.Rows[1].Cells[1].ReadOnly = true;
-
-           // electronic_book.ReadTextBook();
             BuildContentBook(electronic_book.ReadTextBook());
         }
 
         private void BuildContentBook(List<ContentsElectronickBook> contents_electronic_book)
         {
-            int[] list = new int[] { 2,5, 12, 14, 21, 28 };
-            
+            int[] list = new int[] { 2, 5, 12, 14, 21, 28 };
+            //int[] list = electronic_book.ListDirectory();
             foreach (var content_book in contents_electronic_book)
             {
-                int z = 2;
-                if (content_book.number_subsections == 0)
-                {
-                    treeViewEcologya.Nodes.Add(content_book.title_division).Tag = content_book.link_site;
-                    treeViewEcologya.Tag = content_book.link_site;
-                }
-                for (int k = 0; k < 6; k++)
-                {
-                    if (content_book.number_subsections == list[k])
-                    {
-                        treeViewEcologya.Nodes[z].Nodes.Add(content_book.title_division).Tag = content_book.link_site;
-                    }
-                    z++;
-                }
-                //for (int k = 2; k < 6; k++)
-                //{
-
-                //if (content_book.number_subsections == content_book.number_sections && content_book.number_subsections != 0)
-                //{
-                //    treeViewEcologya.Nodes[z].Nodes.Add(content_book.title_division).Tag = content_book.link_site;
-                //}
-                //z++;
-                //}
-                
+                int index = 2;
+                CreateCatalog(content_book);
+                CreateDirectory(content_book, index, list);
             }
-        }    
+        }
+
+        private void CreateCatalog(ContentsElectronickBook content_book)
+        {
+            if (content_book.number_subsections == 0)
+            {
+                treeViewEcologya.Nodes.Add(content_book.title_division).Tag = content_book.link_site;
+                treeViewEcologya.Tag = content_book.link_site;
+            }
+        }
+        private void CreateDirectory(ContentsElectronickBook content_book, int index, int [] list)
+        {
+            for (int k = 0; k < 6; k++)
+            {
+                if (content_book.number_subsections == list[k])
+                {
+                    treeViewEcologya.Nodes[index].Nodes.Add(content_book.title_division).Tag = content_book.link_site;
+                }
+                index++;
+            }
+        }
         private void treeViewEcologya_AfterSelect(object sender, TreeViewEventArgs e)
         {
            webBrowserEcologya.Url = new Uri(Path.GetFullPath("html\\" + Convert.ToString(e.Node.Tag)));
