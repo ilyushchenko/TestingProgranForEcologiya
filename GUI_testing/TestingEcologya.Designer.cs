@@ -36,8 +36,14 @@
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.treeViewEcologya = new System.Windows.Forms.TreeView();
             this.webBrowserEcologya = new System.Windows.Forms.WebBrowser();
+            this.contextMenuWebBrowser = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.tabPageTester = new System.Windows.Forms.TabPage();
+            this.groupBoxWarning = new System.Windows.Forms.GroupBox();
+            this.labelTask = new System.Windows.Forms.Label();
             this.groupBoxControl = new System.Windows.Forms.GroupBox();
+            this.labelResult = new System.Windows.Forms.Label();
+            this.butResult = new System.Windows.Forms.Button();
+            this.textResult = new System.Windows.Forms.TextBox();
             this.labelAttemptHint = new System.Windows.Forms.Label();
             this.labelTime = new System.Windows.Forms.Label();
             this.labelTimeHint = new System.Windows.Forms.Label();
@@ -47,22 +53,21 @@
             this.Amount = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Value = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBoxTask = new System.Windows.Forms.GroupBox();
-            this.labelTask = new System.Windows.Forms.Label();
-            this.groupBoxWarning = new System.Windows.Forms.GroupBox();
-            this.textResult = new System.Windows.Forms.TextBox();
-            this.butResult = new System.Windows.Forms.Button();
-            this.labelResult = new System.Windows.Forms.Label();
+            this.ZoomPlusToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ZoomMinusToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ZoomNormalРазмерToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tabControlEcologya.SuspendLayout();
             this.tabPageBook.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
+            this.contextMenuWebBrowser.SuspendLayout();
             this.tabPageTester.SuspendLayout();
+            this.groupBoxWarning.SuspendLayout();
             this.groupBoxControl.SuspendLayout();
             this.groupBoxDataVariant.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewEcologya)).BeginInit();
-            this.groupBoxWarning.SuspendLayout();
             this.SuspendLayout();
             // 
             // timerTest
@@ -83,9 +88,11 @@
             this.tabControlEcologya.Size = new System.Drawing.Size(771, 588);
             this.tabControlEcologya.TabIndex = 0;
             this.tabControlEcologya.Tag = "XC";
+            this.tabControlEcologya.Click += new System.EventHandler(this.tabControlEcologya_Click);
             // 
             // tabPageBook
             // 
+            this.tabPageBook.BackColor = System.Drawing.Color.WhiteSmoke;
             this.tabPageBook.Controls.Add(this.splitContainer1);
             this.tabPageBook.Location = new System.Drawing.Point(23, 4);
             this.tabPageBook.Name = "tabPageBook";
@@ -94,7 +101,6 @@
             this.tabPageBook.TabIndex = 0;
             this.tabPageBook.Tag = "IC";
             this.tabPageBook.Text = "Электронный учебник";
-            this.tabPageBook.UseVisualStyleBackColor = true;
             // 
             // splitContainer1
             // 
@@ -128,6 +134,7 @@
             // 
             // webBrowserEcologya
             // 
+            this.webBrowserEcologya.ContextMenuStrip = this.contextMenuWebBrowser;
             this.webBrowserEcologya.Dock = System.Windows.Forms.DockStyle.Fill;
             this.webBrowserEcologya.IsWebBrowserContextMenuEnabled = false;
             this.webBrowserEcologya.Location = new System.Drawing.Point(0, 0);
@@ -141,8 +148,19 @@
             this.webBrowserEcologya.WebBrowserShortcutsEnabled = false;
             this.webBrowserEcologya.NewWindow += new System.ComponentModel.CancelEventHandler(this.webBrowserEcologya_NewWindow);
             // 
+            // contextMenuWebBrowser
+            // 
+            this.contextMenuWebBrowser.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.ZoomPlusToolStripMenuItem,
+            this.ZoomMinusToolStripMenuItem,
+            this.ZoomNormalРазмерToolStripMenuItem});
+            this.contextMenuWebBrowser.Name = "contextMenuWebBrowser";
+            this.contextMenuWebBrowser.Size = new System.Drawing.Size(173, 70);
+            // 
             // tabPageTester
             // 
+            this.tabPageTester.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.tabPageTester.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.tabPageTester.Controls.Add(this.groupBoxWarning);
             this.tabPageTester.Controls.Add(this.groupBoxControl);
             this.tabPageTester.Controls.Add(this.groupBoxDataVariant);
@@ -154,7 +172,26 @@
             this.tabPageTester.TabIndex = 1;
             this.tabPageTester.Tag = "IC";
             this.tabPageTester.Text = "Тестирование";
-            this.tabPageTester.UseVisualStyleBackColor = true;
+            // 
+            // groupBoxWarning
+            // 
+            this.groupBoxWarning.Controls.Add(this.labelTask);
+            this.groupBoxWarning.Location = new System.Drawing.Point(382, 8);
+            this.groupBoxWarning.Name = "groupBoxWarning";
+            this.groupBoxWarning.Size = new System.Drawing.Size(353, 202);
+            this.groupBoxWarning.TabIndex = 5;
+            this.groupBoxWarning.TabStop = false;
+            this.groupBoxWarning.Text = "Внимание";
+            // 
+            // labelTask
+            // 
+            this.labelTask.AutoSize = true;
+            this.labelTask.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.labelTask.Location = new System.Drawing.Point(5, 23);
+            this.labelTask.Name = "labelTask";
+            this.labelTask.Size = new System.Drawing.Size(342, 135);
+            this.labelTask.TabIndex = 0;
+            this.labelTask.Text = resources.GetString("labelTask.Text");
             // 
             // groupBoxControl
             // 
@@ -171,6 +208,31 @@
             this.groupBoxControl.TabIndex = 4;
             this.groupBoxControl.TabStop = false;
             this.groupBoxControl.Text = "Управление";
+            // 
+            // labelResult
+            // 
+            this.labelResult.AutoSize = true;
+            this.labelResult.Location = new System.Drawing.Point(16, 119);
+            this.labelResult.Name = "labelResult";
+            this.labelResult.Size = new System.Drawing.Size(62, 13);
+            this.labelResult.TabIndex = 6;
+            this.labelResult.Text = "Результат:";
+            // 
+            // butResult
+            // 
+            this.butResult.Location = new System.Drawing.Point(258, 113);
+            this.butResult.Name = "butResult";
+            this.butResult.Size = new System.Drawing.Size(75, 23);
+            this.butResult.TabIndex = 5;
+            this.butResult.Text = "Ответ";
+            this.butResult.UseVisualStyleBackColor = true;
+            // 
+            // textResult
+            // 
+            this.textResult.Location = new System.Drawing.Point(84, 116);
+            this.textResult.Name = "textResult";
+            this.textResult.Size = new System.Drawing.Size(168, 20);
+            this.textResult.TabIndex = 4;
             // 
             // labelAttemptHint
             // 
@@ -255,50 +317,29 @@
             this.groupBoxTask.TabStop = false;
             this.groupBoxTask.Text = "Задание по варианту";
             // 
-            // labelTask
+            // ZoomPlusToolStripMenuItem
             // 
-            this.labelTask.AutoSize = true;
-            this.labelTask.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.labelTask.Location = new System.Drawing.Point(5, 23);
-            this.labelTask.Name = "labelTask";
-            this.labelTask.Size = new System.Drawing.Size(342, 135);
-            this.labelTask.TabIndex = 0;
-            this.labelTask.Text = resources.GetString("labelTask.Text");
+            this.ZoomPlusToolStripMenuItem.Image = global::GUI_testing.Properties.Resources.zoomplus16;
+            this.ZoomPlusToolStripMenuItem.Name = "ZoomPlusToolStripMenuItem";
+            this.ZoomPlusToolStripMenuItem.Size = new System.Drawing.Size(172, 22);
+            this.ZoomPlusToolStripMenuItem.Text = "Увеличить";
+            this.ZoomPlusToolStripMenuItem.Click += new System.EventHandler(this.ZoomPlusToolStripMenuItem_Click);
             // 
-            // groupBoxWarning
+            // ZoomMinusToolStripMenuItem
             // 
-            this.groupBoxWarning.Controls.Add(this.labelTask);
-            this.groupBoxWarning.Location = new System.Drawing.Point(382, 8);
-            this.groupBoxWarning.Name = "groupBoxWarning";
-            this.groupBoxWarning.Size = new System.Drawing.Size(353, 202);
-            this.groupBoxWarning.TabIndex = 5;
-            this.groupBoxWarning.TabStop = false;
-            this.groupBoxWarning.Text = "Внимание";
+            this.ZoomMinusToolStripMenuItem.Image = global::GUI_testing.Properties.Resources.zoomminus;
+            this.ZoomMinusToolStripMenuItem.Name = "ZoomMinusToolStripMenuItem";
+            this.ZoomMinusToolStripMenuItem.Size = new System.Drawing.Size(172, 22);
+            this.ZoomMinusToolStripMenuItem.Text = "Уменьшить";
+            this.ZoomMinusToolStripMenuItem.Click += new System.EventHandler(this.ZoomMinusToolStripMenuItem_Click);
             // 
-            // textResult
+            // ZoomNormalРазмерToolStripMenuItem
             // 
-            this.textResult.Location = new System.Drawing.Point(84, 116);
-            this.textResult.Name = "textResult";
-            this.textResult.Size = new System.Drawing.Size(168, 20);
-            this.textResult.TabIndex = 4;
-            // 
-            // butResult
-            // 
-            this.butResult.Location = new System.Drawing.Point(258, 113);
-            this.butResult.Name = "butResult";
-            this.butResult.Size = new System.Drawing.Size(75, 23);
-            this.butResult.TabIndex = 5;
-            this.butResult.Text = "Ответ";
-            this.butResult.UseVisualStyleBackColor = true;
-            // 
-            // labelResult
-            // 
-            this.labelResult.AutoSize = true;
-            this.labelResult.Location = new System.Drawing.Point(16, 119);
-            this.labelResult.Name = "labelResult";
-            this.labelResult.Size = new System.Drawing.Size(62, 13);
-            this.labelResult.TabIndex = 6;
-            this.labelResult.Text = "Результат:";
+            this.ZoomNormalРазмерToolStripMenuItem.Image = global::GUI_testing.Properties.Resources.find;
+            this.ZoomNormalРазмерToolStripMenuItem.Name = "ZoomNormalРазмерToolStripMenuItem";
+            this.ZoomNormalРазмерToolStripMenuItem.Size = new System.Drawing.Size(172, 22);
+            this.ZoomNormalРазмерToolStripMenuItem.Text = "Обычный размер";
+            this.ZoomNormalРазмерToolStripMenuItem.Click += new System.EventHandler(this.ZoomNormalРазмерToolStripMenuItem_Click);
             // 
             // TestingEcologya
             // 
@@ -315,13 +356,14 @@
             this.splitContainer1.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
             this.splitContainer1.ResumeLayout(false);
+            this.contextMenuWebBrowser.ResumeLayout(false);
             this.tabPageTester.ResumeLayout(false);
+            this.groupBoxWarning.ResumeLayout(false);
+            this.groupBoxWarning.PerformLayout();
             this.groupBoxControl.ResumeLayout(false);
             this.groupBoxControl.PerformLayout();
             this.groupBoxDataVariant.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewEcologya)).EndInit();
-            this.groupBoxWarning.ResumeLayout(false);
-            this.groupBoxWarning.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -350,6 +392,10 @@
         private System.Windows.Forms.Label labelResult;
         private System.Windows.Forms.Button butResult;
         private System.Windows.Forms.TextBox textResult;
+        private System.Windows.Forms.ContextMenuStrip contextMenuWebBrowser;
+        private System.Windows.Forms.ToolStripMenuItem ZoomPlusToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem ZoomMinusToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem ZoomNormalРазмерToolStripMenuItem;
     }
 }
 

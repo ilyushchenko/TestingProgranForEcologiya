@@ -88,5 +88,26 @@
       <Name>TestingProgramBusinessLogic</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Dew-green-grass-Wallpapers-HD-1920x1200.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\zoom +.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\zoom +1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\zoomminus.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\zoomplus.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\find.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\zoomplus16.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
