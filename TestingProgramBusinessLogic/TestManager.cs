@@ -62,11 +62,12 @@ namespace TestingProgramBusinessLogic
             return currentTime >= m_finishTime ? true : false;
         }
 
-        public bool CheckAnwser(double userAnwser, out int tryCount)
+        public bool CheckAnwser(double userAnwser)
         {
             double errorValue = 0.01;
             // TODO: См. TODO выше xD
-            // return (userAnwser > <правильный ответ> + <правильный ответ> * errorValue) && (userAnwser < <правильный ответ> - <правильный ответ> * errorValue) ? true : tryCount--;
+            // return (userAnwser > <правильный ответ> + <правильный ответ> * errorValue) && (userAnwser < <правильный ответ> - <правильный ответ> * errorValue);
+            return Math.Abs(<правильный ответ> - userAnwser) < errorValue;
         }
         
     }
