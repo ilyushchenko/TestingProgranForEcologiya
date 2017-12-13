@@ -101,7 +101,7 @@
             this.tabControlEcologya.Name = "tabControlEcologya";
             this.tabControlEcologya.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.tabControlEcologya.SelectedIndex = 0;
-            this.tabControlEcologya.Size = new System.Drawing.Size(781, 551);
+            this.tabControlEcologya.Size = new System.Drawing.Size(789, 562);
             this.tabControlEcologya.TabIndex = 0;
             this.tabControlEcologya.Tag = "XC";
             // 
@@ -221,7 +221,7 @@
             this.tabPageTester.Margin = new System.Windows.Forms.Padding(4);
             this.tabPageTester.Name = "tabPageTester";
             this.tabPageTester.Padding = new System.Windows.Forms.Padding(4);
-            this.tabPageTester.Size = new System.Drawing.Size(750, 543);
+            this.tabPageTester.Size = new System.Drawing.Size(758, 554);
             this.tabPageTester.TabIndex = 1;
             this.tabPageTester.Tag = "IC";
             this.tabPageTester.Text = "Тестирование";
@@ -229,7 +229,7 @@
             // groupBoxWarning
             // 
             this.groupBoxWarning.Controls.Add(this.labelTask);
-            this.groupBoxWarning.Location = new System.Drawing.Point(388, 4);
+            this.groupBoxWarning.Location = new System.Drawing.Point(392, 4);
             this.groupBoxWarning.Margin = new System.Windows.Forms.Padding(4);
             this.groupBoxWarning.Name = "groupBoxWarning";
             this.groupBoxWarning.Padding = new System.Windows.Forms.Padding(4);
@@ -255,7 +255,7 @@
             this.groupBoxControl.Controls.Add(this.panelRemainingTime);
             this.groupBoxControl.Controls.Add(this.panelTime);
             this.groupBoxControl.Controls.Add(this.butStart);
-            this.groupBoxControl.Location = new System.Drawing.Point(387, 237);
+            this.groupBoxControl.Location = new System.Drawing.Point(391, 238);
             this.groupBoxControl.Margin = new System.Windows.Forms.Padding(4);
             this.groupBoxControl.Name = "groupBoxControl";
             this.groupBoxControl.Padding = new System.Windows.Forms.Padding(4);
@@ -370,7 +370,7 @@
             // groupBoxDataVariant
             // 
             this.groupBoxDataVariant.Controls.Add(this.dataGridViewEcologya);
-            this.groupBoxDataVariant.Location = new System.Drawing.Point(5, 157);
+            this.groupBoxDataVariant.Location = new System.Drawing.Point(11, 157);
             this.groupBoxDataVariant.Margin = new System.Windows.Forms.Padding(4);
             this.groupBoxDataVariant.Name = "groupBoxDataVariant";
             this.groupBoxDataVariant.Padding = new System.Windows.Forms.Padding(4);
@@ -410,7 +410,7 @@
             // groupBoxTask
             // 
             this.groupBoxTask.Controls.Add(this.labelExercise);
-            this.groupBoxTask.Location = new System.Drawing.Point(6, 4);
+            this.groupBoxTask.Location = new System.Drawing.Point(10, 4);
             this.groupBoxTask.Margin = new System.Windows.Forms.Padding(4);
             this.groupBoxTask.Name = "groupBoxTask";
             this.groupBoxTask.Padding = new System.Windows.Forms.Padding(4);
@@ -444,17 +444,16 @@
             this.panelTester.Controls.Add(this.groupBoxTask);
             this.panelTester.Location = new System.Drawing.Point(2, 2);
             this.panelTester.Name = "panelTester";
-            this.panelTester.Size = new System.Drawing.Size(749, 538);
+            this.panelTester.Size = new System.Drawing.Size(785, 538);
             this.panelTester.TabIndex = 1;
             // 
             // TestingEcologya
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(781, 551);
+            this.ClientSize = new System.Drawing.Size(789, 562);
             this.Controls.Add(this.tabControlEcologya);
             this.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "TestingEcologya";

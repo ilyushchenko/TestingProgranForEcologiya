@@ -21,10 +21,10 @@ namespace GUI_testing
             test_manager = new TestManager(new Variants());
             test_manager.Messaging += test_manager_Messaging;
             InitializeComponent();
-            //panelTester.Location = new Point(
-            //this.ClientSize.Width / 2 - panelTester.Size.Width / 2,
-            // this.ClientSize.Height / 2 - panelTester.Size.Height / 2);
-            //panelTester.Anchor = AnchorStyles.None;
+            panelTester.Location = new Point(
+            this.ClientSize.Width / 2 - panelTester.Size.Width / 2,
+             this.ClientSize.Height / 2 - panelTester.Size.Height / 2);
+            panelTester.Anchor = AnchorStyles.None;
         }
 
         private void TestingEcologya_Load(object sender, EventArgs e)
