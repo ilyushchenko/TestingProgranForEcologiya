@@ -14,48 +14,63 @@ namespace GUI_testing
 {
     public partial class TestingEcologya : Form
     {
+        ElectronickTextBook electronic_book = new ElectronickTextBook();
+        private TestManager test_manager;
+
         public TestingEcologya()
         {
+            test_manager = new TestManager(new Variants());
+            test_manager.Messaging += test_manager_Messaging;
             InitializeComponent();
         }
-        ElectronickTextBook electronic_book = new ElectronickTextBook();
-        DateTime start, stop;
 
-        private TestManager test_manager;
         private void TestingEcologya_Load(object sender, EventArgs e)
         {
-            test_manager = new TestManager(new Variants());
-            
-            test_manager.Messaging += test_manager_Messaging;
-            Variant variant = new Variant();
-            BuildTabelVariant(variant);
+            BuildTabelVariant(new Variant());
             BuildContentBook(electronic_book.ReadTextBook());
             webBrowserEcologya.Url = new Uri(Path.GetFullPath("html\\start.html"));
-           
         }
 
         private void test_manager_Messaging(object sendler, TestingEventArgs e)
         {
             switch (e.TestStatus)
-            { 
+            {
                 case TestStatus.EndOfTime:
-                    break;
                 case TestStatus.EndOfTryCount:
-                    break;
+                    {
+                        ResetFormState();
+                        MessageBox.Show(e.Message, "Ошибка!");
+                        labelAttemptHint.Text = e.Message;
+                        break;
+                    }
                 case TestStatus.WrongAnswer:
-                    break;
+                    {
+                        MessageBox.Show(e.Message, "Ошибка!");
+                        labelAttemptHint.Text = e.Message;
+                        break;
+                    }
                 case TestStatus.Complete:
-                    break;
+                    {
+                        ResetFormState();
+                        MessageBox.Show(e.Message, "Поздравляем!");
+                        labelAttemptHint.Text = e.Message;
+                        break;
+                    }
+
                 default:
                     break;
             }
-               // MessageBox.Showe.TestStatus);
+        }
+        private void ResetFormState()
+        {
+            timerTest.Stop();
+            butResult.Enabled = false;
+            textResult.Enabled = false;
         }
 
         private void BuildContentBook(List<ContentsElectronickBook> contents_electronic_book)
         {
             int[] list = new int[] { 2, 5, 12, 14, 21, 28 };
-            //int[] list = electronic_book.ListDirectory();
             foreach (var content_book in contents_electronic_book)
             {
                 int index = 2;
@@ -72,7 +87,7 @@ namespace GUI_testing
                 treeViewEcologya.Tag = content_book.link_site;
             }
         }
-        private void CreateDirectory(ContentsElectronickBook content_book, int index, int [] list)
+        private void CreateDirectory(ContentsElectronickBook content_book, int index, int[] list)
         {
             for (int k = 0; k < 6; k++)
             {
@@ -82,23 +97,18 @@ namespace GUI_testing
                 }
                 index++;
             }
-        } 
+        }
         private void butStart_Click(object sender, EventArgs e)
         {
             textResult.Enabled = true;
             textResult.Clear();
             textResult.Focus();
             butResult.Enabled = true;
-
             timerTest.Enabled = true;
             timerTest.Start();
-            start = DateTime.Now;
-            stop = DateTime.Parse("00:45:00");
-
+            butStart.Enabled = false;
             Variant variant = test_manager.StartTest(3, 45);
             BuildTabelVariant(variant);
-
-           // labelTime.Text = test_manager.Countdown.ToString();
         }
 
         private void BuildTabelVariant(Variant variant)
@@ -117,46 +127,26 @@ namespace GUI_testing
             this.dataGridViewEcologya.Rows.Add("Диаметр трубы", variant.Diameter);
             this.dataGridViewEcologya.Rows.Add("a", variant.SideA);
             this.dataGridViewEcologya.Rows.Add("b", variant.SideB);
-            this.dataGridViewEcologya.Rows.Add("w0, м/с", variant.W0); 
+            this.dataGridViewEcologya.Rows.Add("w0, м/с", variant.W0);
         }
         private void timerTest_Tick(object sender, EventArgs e)
         {
-            TimeSpan time = (DateTime.Now - start).Duration();
-            //labelTime.Text = time.ToString("hh\\:mm\\:ss");
             labelTime.Text = test_manager.Countdown.ToString();
             test_manager.Tick();
-            if (test_manager.IsTestFinished())
-            {
-                timerTest.Stop();
-                MessageBox.Show("Тест остановлен!");
-                butStart.Enabled = false;
-                butResult.Enabled = false;
-            }
-            
-            //if (time.Minutes  == stop.Minute)
-            //{
-            //    timerTest.Stop();
-            //    MessageBox.Show("Тест не решен!");
-            //    butStart.Enabled = false;
-            //    butResult.Enabled = false;
-            //}
         }
 
         private void butResult_Click(object sender, EventArgs e)
         {
-           if ( test_manager.CheckAnwser(double.Parse(textResult.Text)) == true)
-           {
-               timerTest.Stop();
-               butStart.Enabled = false;
-               butResult.Enabled = false;
-               textResult.Enabled = false;
-               MessageBox.Show("Тест выполнен успешно!");
-               
-           } else if (test_manager.TryCount >0)
-           {
-               MessageBox.Show(string.Format("Ответ неправильный! \nОставшиеся количество попыток {0}", test_manager.TryCount.ToString()));
-               labelAttemptHint.Text = string.Format("Оставшиеся количество попыток {0} из 3", test_manager.TryCount.ToString());
-           } 
+            double result;
+            string text = textResult.Text;
+            if (double.TryParse(text.Replace('.', ','), out result))
+            {
+                test_manager.CheckAnwser(result);
+            }
+            else
+            {
+                MessageBox.Show("Данные введенны неправильно!\nВвод числа производится через запятую! \nПример ввода: 1,75", "Ошибка!");
+            }
         }
 
         #region События для WebBrowser
@@ -200,6 +190,6 @@ namespace GUI_testing
             e.Cancel = true;
         }
         #endregion
-        
+
     }
 }
