@@ -19,6 +19,7 @@ namespace GUI_testing
             InitializeComponent();
         }
         ElectronickTextBook electronic_book = new ElectronickTextBook();
+        DateTime start, stop;
         private void TestingEcologya_Load(object sender, EventArgs e)
         {
             //Пример использования по циклу можно построить таблицк с вариантом
@@ -119,6 +120,27 @@ namespace GUI_testing
         {
             ((WebBrowser)sender).Url = new Uri(((WebBrowser)sender).StatusText);
             e.Cancel = true;
+        }
+
+        private void butStart_Click(object sender, EventArgs e)
+        {
+            timerTest.Enabled = true;
+            timerTest.Start();
+            start = DateTime.Now;
+            stop = DateTime.Parse("00:45:00");
+        }
+       
+        private void timerTest_Tick(object sender, EventArgs e)
+        {
+            TimeSpan time = (DateTime.Now - start).Duration();
+            labelTime.Text = time.ToString("hh\\:mm\\:ss");
+            if (time.Minutes  == stop.Minute)
+            {
+                timerTest.Stop();
+                MessageBox.Show("Тест не решен!");
+                butStart.Enabled = false;
+                butResult.Enabled = false;
+            }
         }
         
     }

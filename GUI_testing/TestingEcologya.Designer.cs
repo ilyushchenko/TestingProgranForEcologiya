@@ -49,7 +49,7 @@
             this.groupBoxTask = new System.Windows.Forms.GroupBox();
             this.labelTask = new System.Windows.Forms.Label();
             this.groupBoxWarning = new System.Windows.Forms.GroupBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.textResult = new System.Windows.Forms.TextBox();
             this.butResult = new System.Windows.Forms.Button();
             this.labelResult = new System.Windows.Forms.Label();
             this.tabControlEcologya.SuspendLayout();
@@ -65,6 +65,10 @@
             this.groupBoxWarning.SuspendLayout();
             this.SuspendLayout();
             // 
+            // timerTest
+            // 
+            this.timerTest.Tick += new System.EventHandler(this.timerTest_Tick);
+            // 
             // tabControlEcologya
             // 
             this.tabControlEcologya.Alignment = System.Windows.Forms.TabAlignment.Left;
@@ -78,6 +82,7 @@
             this.tabControlEcologya.SelectedIndex = 0;
             this.tabControlEcologya.Size = new System.Drawing.Size(771, 588);
             this.tabControlEcologya.TabIndex = 0;
+            this.tabControlEcologya.Tag = "XC";
             // 
             // tabPageBook
             // 
@@ -85,8 +90,9 @@
             this.tabPageBook.Location = new System.Drawing.Point(23, 4);
             this.tabPageBook.Name = "tabPageBook";
             this.tabPageBook.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageBook.Size = new System.Drawing.Size(744, 630);
+            this.tabPageBook.Size = new System.Drawing.Size(744, 580);
             this.tabPageBook.TabIndex = 0;
+            this.tabPageBook.Tag = "IC";
             this.tabPageBook.Text = "Электронный учебник";
             this.tabPageBook.UseVisualStyleBackColor = true;
             // 
@@ -105,7 +111,7 @@
             // 
             this.splitContainer1.Panel2.Controls.Add(this.webBrowserEcologya);
             this.splitContainer1.Panel2.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.splitContainer1.Size = new System.Drawing.Size(738, 624);
+            this.splitContainer1.Size = new System.Drawing.Size(738, 574);
             this.splitContainer1.SplitterDistance = 179;
             this.splitContainer1.TabIndex = 0;
             // 
@@ -116,7 +122,7 @@
             this.treeViewEcologya.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
             this.treeViewEcologya.Location = new System.Drawing.Point(0, 0);
             this.treeViewEcologya.Name = "treeViewEcologya";
-            this.treeViewEcologya.Size = new System.Drawing.Size(179, 624);
+            this.treeViewEcologya.Size = new System.Drawing.Size(179, 574);
             this.treeViewEcologya.TabIndex = 0;
             this.treeViewEcologya.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.treeViewEcologya_AfterSelect);
             // 
@@ -128,7 +134,7 @@
             this.webBrowserEcologya.MinimumSize = new System.Drawing.Size(20, 20);
             this.webBrowserEcologya.Name = "webBrowserEcologya";
             this.webBrowserEcologya.ScriptErrorsSuppressed = true;
-            this.webBrowserEcologya.Size = new System.Drawing.Size(555, 624);
+            this.webBrowserEcologya.Size = new System.Drawing.Size(555, 574);
             this.webBrowserEcologya.TabIndex = 0;
             this.webBrowserEcologya.Url = new System.Uri("C:\\Users\\Андрей\\Source\\Repos\\TestingProgranForEcologiya\\GUI_testing\\bin\\Debug\\htm" +
         "l\\vved.html", System.UriKind.Absolute);
@@ -146,6 +152,7 @@
             this.tabPageTester.Padding = new System.Windows.Forms.Padding(3);
             this.tabPageTester.Size = new System.Drawing.Size(744, 580);
             this.tabPageTester.TabIndex = 1;
+            this.tabPageTester.Tag = "IC";
             this.tabPageTester.Text = "Тестирование";
             this.tabPageTester.UseVisualStyleBackColor = true;
             // 
@@ -153,7 +160,7 @@
             // 
             this.groupBoxControl.Controls.Add(this.labelResult);
             this.groupBoxControl.Controls.Add(this.butResult);
-            this.groupBoxControl.Controls.Add(this.textBox1);
+            this.groupBoxControl.Controls.Add(this.textResult);
             this.groupBoxControl.Controls.Add(this.labelAttemptHint);
             this.groupBoxControl.Controls.Add(this.labelTime);
             this.groupBoxControl.Controls.Add(this.labelTimeHint);
@@ -200,6 +207,7 @@
             this.butStart.TabIndex = 0;
             this.butStart.Text = "Начать тест";
             this.butStart.UseVisualStyleBackColor = true;
+            this.butStart.Click += new System.EventHandler(this.butStart_Click);
             // 
             // groupBoxDataVariant
             // 
@@ -267,12 +275,12 @@
             this.groupBoxWarning.TabStop = false;
             this.groupBoxWarning.Text = "Внимание";
             // 
-            // textBox1
+            // textResult
             // 
-            this.textBox1.Location = new System.Drawing.Point(84, 116);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(168, 20);
-            this.textBox1.TabIndex = 4;
+            this.textResult.Location = new System.Drawing.Point(84, 116);
+            this.textResult.Name = "textResult";
+            this.textResult.Size = new System.Drawing.Size(168, 20);
+            this.textResult.TabIndex = 4;
             // 
             // butResult
             // 
@@ -341,7 +349,7 @@
         private System.Windows.Forms.Label labelTask;
         private System.Windows.Forms.Label labelResult;
         private System.Windows.Forms.Button butResult;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox textResult;
     }
 }
 
