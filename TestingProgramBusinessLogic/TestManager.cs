@@ -111,7 +111,10 @@ namespace TestingProgramBusinessLogic
             if (!result)
             {
                 TryCount--;
-                Messaging.Invoke(this, new TestingEventArgs(TestStatus.WrongAnswer, String.Format("Неправильный ответ!\nОставшееся количество попыток: {0}", TryCount)));
+                if (TryCount > 0)
+                {
+                    Messaging.Invoke(this, new TestingEventArgs(TestStatus.WrongAnswer, String.Format("Неправильный ответ!\nОставшееся количество попыток: {0}", TryCount)));
+                }
             }
             else
             {
