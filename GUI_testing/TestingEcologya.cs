@@ -21,7 +21,6 @@ namespace GUI_testing
         ElectronickTextBook electronic_book = new ElectronickTextBook();
         private void TestingEcologya_Load(object sender, EventArgs e)
         {
-
             this.dataGridViewEcologya.Rows.Add("№ Варианта");
             this.dataGridViewEcologya.Rows.Add("Вещество");
             this.dataGridViewEcologya.Rows.Add("ПДК, мг/м^3");
@@ -39,9 +38,6 @@ namespace GUI_testing
             this.dataGridViewEcologya.Rows.Add("w0, м/с");
             dataGridViewEcologya.Rows[1].Cells[1].ReadOnly = true;
 
-            //treeViewEcologya.Nodes.Add(new TreeNode("Загаловок"));
-            //treeViewEcologya.Nodes.Add(new TreeNode("Введение"));
-            //treeViewEcologya.Nodes[0].Nodes.Add("dddd");
             
             electronic_book.ReadTextBook();
             //electronic_book.BuildCatalog(treeViewEcologya);
@@ -50,58 +46,24 @@ namespace GUI_testing
 
         private void BuildContentBook()
         {
-           
-            
+           // int[] list = new int[] { 5, 12, 14, 21, 28 };
+          
             foreach (var content_book in electronic_book.ContentBook)
             {
-
-                //if (content_book.number_subsections == 0)
-                //{
-                //    treeViewEcologya.Nodes.Add(content_book.title_division);
-                //    //treeViewEcologya.Tag = content_book.link_site;
-                //    treeViewEcologya.Nodes[0].Tag = content_book.link_site;
-                //}
-                //if (content_book.number_subsections == 2)
-                //{
-                //    treeViewEcologya.Nodes[2].Nodes.Add(content_book.title_division);
-                //    treeViewEcologya.Tag = content_book.link_site;
-                //}
-                //if (content_book.number_subsections == 5)
-                //{
-                //    treeViewEcologya.Nodes[3].Nodes.Add(content_book.title_division);
-                //    treeViewEcologya.Tag = content_book.link_site;
-                //}
-                //if (content_book.number_subsections == 12)
-                //{
-                //    treeViewEcologya.Nodes[4].Nodes.Add(content_book.title_division);
-                //    treeViewEcologya.Tag = content_book.link_site;
-                //}
-                //if (content_book.number_subsections == 14)
-                //{
-                //    treeViewEcologya.Nodes[5].Nodes.Add(content_book.title_division);
-                //    treeViewEcologya.Tag = content_book.link_site;
-                //}
-                //if (content_book.number_subsections == 21)
-                //{
-                //    treeViewEcologya.Nodes[6].Nodes.Add(content_book.title_division);
-                //    treeViewEcologya.Tag = content_book.link_site;
-                //}
-                //if (content_book.number_subsections == 28)
-                //{
-                //    treeViewEcologya.Nodes[7].Nodes.Add(content_book.title_division).Tag = content_book.link_site;
-                //   // treeViewEcologya.Nodes[7].Nodes[0].Tag = content_book.link_site;
-                //    treeViewEcologya.Nodes[7].Tag = content_book.link_site;
-                //}
-
                
+               // int z = 2;
                 //if (content_book.number_subsections == 0)
                 //{
                 //    treeViewEcologya.Nodes.Add(content_book.title_division).Tag = content_book.link_site;
-                //    treeViewEcologya.Nodes[0].Tag = content_book.link_site;
+                //    treeViewEcologya.Tag = content_book.link_site;
                 //}
-
                 CheckContent(content_book);
-
+                    //if (content_book.number_subsections == list[k])
+                    //{
+                    //    treeViewEcologya.Nodes[z].Nodes.Add(content_book.title_division).Tag = content_book.link_site;
+                    //    // treeViewEcologya.Nodes[z].Nodes[0].Tag = content_book.link_site;
+                    //}
+                //  z++;
             }
         }
         private void CheckContent(ContentsElectronickBook content_book)
@@ -116,50 +78,39 @@ namespace GUI_testing
                     case 2:
                         {
                             treeViewEcologya.Nodes[2].Nodes.Add(content_book.title_division).Tag = content_book.link_site;
-                            treeViewEcologya.Nodes[2].Nodes[0].Tag = content_book.link_site; break;
+                            break;
                         }
                     case 5:
                         {
                             treeViewEcologya.Nodes[3].Nodes.Add(content_book.title_division).Tag = content_book.link_site;
-                            treeViewEcologya.Nodes[3].Nodes[0].Tag = content_book.link_site; break;
+                            break;
                         }
                     case 12:
                         {
                             treeViewEcologya.Nodes[4].Nodes.Add(content_book.title_division).Tag = content_book.link_site;
-                            treeViewEcologya.Nodes[4].Nodes[0].Tag = content_book.link_site;
                             break;
                         }
                     case 14:
                         {
                             treeViewEcologya.Nodes[5].Nodes.Add(content_book.title_division).Tag = content_book.link_site;
-                            treeViewEcologya.Nodes[5].Nodes[0].Tag = content_book.link_site;
                             break;
                         }
                     case 21:
                         {
                             treeViewEcologya.Nodes[6].Nodes.Add(content_book.title_division).Tag = content_book.link_site;
-                            treeViewEcologya.Nodes[6].Nodes[0].Tag = content_book.link_site;
                             break;
                         }
                     case 28:
                         {
                             treeViewEcologya.Nodes[7].Nodes.Add(content_book.title_division).Tag = content_book.link_site;
-                            treeViewEcologya.Nodes[7].Nodes[0].Tag = content_book.link_site;
                             break;
                         }
                 }
         }
 
-        private void treeViewEcologya_Click(object sender, EventArgs e)
-        {
-            //MessageBox.Show(Convert.ToString(treeViewEcologya.SelectedNode.Text));
-        }
-
         private void treeViewEcologya_AfterSelect(object sender, TreeViewEventArgs e)
         {
-            //MessageBox.Show(Convert.ToString(e.Node.Tag));
-                // MessageBox.Show(  Path.GetFullPath("html\\"+    Convert.ToString(e.Node.Tag)));
-                 webBrowserEcologya.Url = new Uri(Path.GetFullPath("html\\" + Convert.ToString(e.Node.Tag)));
+           webBrowserEcologya.Url = new Uri(Path.GetFullPath("html\\" + Convert.ToString(e.Node.Tag)));
         }
         
     }
