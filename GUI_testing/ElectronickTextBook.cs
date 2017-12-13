@@ -17,14 +17,10 @@ namespace GUI_testing
     }
     class ElectronickTextBook
     {
-        //private List<int> number_sections = new List<int>();
-        //private List<int> number_subsections = new List<int>();
-        //private List<string> title_division = new List<string>();
-        //private List<string> link_site = new List<string>();
 
         ContentsElectronickBook contents_books = new ContentsElectronickBook();
         List<ContentsElectronickBook> list_contents_books = new List<ContentsElectronickBook>();
-       
+        
         public void ReadTextBook()
         {
             using (StreamReader read_text_book = new StreamReader("html\\index.txt", encoding: Encoding.GetEncoding(1251)))
@@ -37,76 +33,9 @@ namespace GUI_testing
                     contents_books.title_division = str[2];
                     contents_books.link_site = str[3];
                     list_contents_books.Add(contents_books);
-                    
-                    //number_sections.Add(int.Parse(str[0]));
-                    //number_subsections.Add(int.Parse(str[1]));
-                    //title_division.Add(str[2]);
-                    //link_site.Add(str[3]);
                 } 
             }
         }
-
-
-        public void BuildCatalog(TreeView treeView)
-        {
-            foreach (var content_book in list_contents_books)
-            {
-                // treeView.Nodes[content_book.number_sections].Nodes[content_book.number_subsections].Nodes.Add(new TreeNode(content_book.title_division));
-                if (content_book.number_subsections == 0)
-                {
-                    treeView.Nodes.Add(content_book.title_division);
-                }
-                if (content_book.number_subsections == 2)
-                {
-                    treeView.Nodes[2].Nodes.Add(content_book.title_division);
-                }
-                if (content_book.number_subsections == 5)
-                {
-                    treeView.Nodes[3].Nodes.Add(content_book.title_division);
-                }
-                if (content_book.number_subsections == 12)
-                {
-                    treeView.Nodes[4].Nodes.Add(content_book.title_division);
-                }
-                if (content_book.number_subsections == 14)
-                {
-                    treeView.Nodes[5].Nodes.Add(content_book.title_division);
-                }
-                if (content_book.number_subsections == 21)
-                {
-                    treeView.Nodes[6].Nodes.Add(content_book.title_division);
-                }
-                if (content_book.number_subsections == 28)
-                {
-                    treeView.Nodes[7].Nodes.Add(content_book.title_division);
-                }
-
-                //for (int k = 0; k < 8; k++)
-                //{
-                //    if (content_book.number_subsections == content_book.number_sections)
-                //    {
-                //        treeView.Nodes[k].Nodes.Add(content_book.title_division);
-                //    }
-                //}
-
-            }
-           
-
-            //for (int z =0; z < list_contents_books.Count; z++)
-            //{
-            //    for (int k = 0; k < 8; k++)
-            //    {
-            //        if (list_contents_books[z].number_sections == list_contents_books[k].number_subsections)
-            //        {
-            //            treeView.Nodes[k].Nodes.Add(list_contents_books[k].title_division);
-            //        }
-            //    }
-            //}
-          //  treeView.Nodes.Add("Загаловок");
-            //treeView.Nodes.Add("Введение");
-            //treeView.Nodes[0].Nodes.Add("dddd");
-        }
-       
         public List<ContentsElectronickBook> ContentBook
         {
             get { return list_contents_books; }
