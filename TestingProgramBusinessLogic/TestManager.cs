@@ -9,7 +9,7 @@ namespace TestingProgramBusinessLogic
     public class TestManager
     {
         public int TryCount { get; private set; }
-        public DateTime Countdown { get; private set; }
+        public int Countdown { get; private set; }
 
         private Random rnd = new Random();
         private List<Variant> m_variants;
@@ -41,7 +41,7 @@ namespace TestingProgramBusinessLogic
         public Variant StartTest(int tryCount, int testingTime)
         {
             TryCount = tryCount;
-            Countdown = new DateTime(0, 0, 0, 0, testingTime, 0);
+            Countdown = 60 * testingTime;
             m_currentVariant = rnd.Next(m_variants.Count);
             return m_variants[m_currentVariant];
         }
@@ -53,14 +53,17 @@ namespace TestingProgramBusinessLogic
         {
             if(!IsTestFinished())
             {
-                Countdown.Subtract(new DateTime(0, 0, 0, 0, 0, 1));
+                Countdown--;
             }
         }
 
-        // Метод проверки окончания:
+        /// <summary>
+        /// Метод проверки окончания тестирования
+        /// </summary>
+        /// <returns>Возвращает true, если тест закончен, в противном случае возвращает false</returns>
         public bool IsTestFinished()
         {
-            return currentTime >= m_finishTime ? true : false;
+            return !(TryCount > 0 && Countdown > 0);
         }
 
         /// <summary>
@@ -70,8 +73,8 @@ namespace TestingProgramBusinessLogic
         /// <returns>В случае правильного отвера возвращает </returns>
         public bool CheckAnwser(double userAnwser)
         {
-            double errorValue = 0.01;
-            bool result = result = Math.Abs(m_variants[m_currentVariant].Answer - userAnwser) < errorValue;
+            double errorValue = 0.05;
+            bool result = Math.Abs(m_variants[m_currentVariant].Answer - userAnwser) < errorValue;
             if (!result)
             {
                 TryCount--;
