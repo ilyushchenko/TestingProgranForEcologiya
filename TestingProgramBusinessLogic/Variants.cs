@@ -6,16 +6,13 @@ using System.Threading.Tasks;
 
 namespace TestingProgramBusinessLogic
 {
-    public class Variants
+    public class Variants : IDataLoader<Variant>
     {
-        private List<Variant> variants;
-
-        public Variants()
+        public IEnumerable<Variant> GetCollection()
         {
-            variants = new List<Variant>();
+            return new Variant[]
+            {
+            };
         }
-
-        //TODO: Метод загрузки вариантов
-        //TODO: Метод получения варианта
     }
 }
