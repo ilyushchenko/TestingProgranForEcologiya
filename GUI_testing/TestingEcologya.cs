@@ -46,6 +46,11 @@ namespace GUI_testing
             //}
             BuildContentBook(electronic_book.ReadTextBook());
             webBrowserEcologya.Url = new Uri(Path.GetFullPath("html\\start.html"));
+            Variants variants = new Variants();
+
+           
+
+            test_manager.Load(variants);
         }
 
         private void BuildContentBook(List<ContentsElectronickBook> contents_electronic_book)
@@ -98,6 +103,21 @@ namespace GUI_testing
             start = DateTime.Now;
             stop = DateTime.Parse("00:45:00");
             Variant varaiant = test_manager.StartTest(3, 45);
+            dataGridViewEcologya.Rows.Clear();
+            this.dataGridViewEcologya.Rows.Add("№ Варианта", varaiant.VariantNuimber);
+            this.dataGridViewEcologya.Rows.Add("Вещество", varaiant.Material);
+            this.dataGridViewEcologya.Rows.Add("ПДК, мг/м^3", varaiant.PDK);
+            this.dataGridViewEcologya.Rows.Add("Cф, мг/м^3", varaiant.C_f);
+            this.dataGridViewEcologya.Rows.Add("Н, м", varaiant.H);
+            this.dataGridViewEcologya.Rows.Add("F", varaiant.F);
+            this.dataGridViewEcologya.Rows.Add("m", varaiant.M);
+            this.dataGridViewEcologya.Rows.Add("n", varaiant.N);
+            this.dataGridViewEcologya.Rows.Add("Mx, % от ПДВ",varaiant.Mx);
+            this.dataGridViewEcologya.Rows.Add("Температура среды", varaiant.TemperatureAvg);
+            this.dataGridViewEcologya.Rows.Add("Диаметр трубы",varaiant.Diameter);
+            this.dataGridViewEcologya.Rows.Add("a",varaiant.SideA);
+            this.dataGridViewEcologya.Rows.Add("b", varaiant.SideB);
+            this.dataGridViewEcologya.Rows.Add("w0, м/с", varaiant.W0); 
         }
        
         private void timerTest_Tick(object sender, EventArgs e)
