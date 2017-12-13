@@ -116,6 +116,7 @@
             // webBrowserEcologya
             // 
             this.webBrowserEcologya.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.webBrowserEcologya.IsWebBrowserContextMenuEnabled = false;
             this.webBrowserEcologya.Location = new System.Drawing.Point(0, 0);
             this.webBrowserEcologya.MinimumSize = new System.Drawing.Size(20, 20);
             this.webBrowserEcologya.Name = "webBrowserEcologya";
@@ -124,6 +125,7 @@
             this.webBrowserEcologya.TabIndex = 0;
             this.webBrowserEcologya.Url = new System.Uri("C:\\Users\\Андрей\\Source\\Repos\\TestingProgranForEcologiya\\GUI_testing\\bin\\Debug\\htm" +
         "l\\vved.html", System.UriKind.Absolute);
+            this.webBrowserEcologya.NewWindow += new System.ComponentModel.CancelEventHandler(this.webBrowserEcologya_NewWindow);
             // 
             // tabPageTester
             // 

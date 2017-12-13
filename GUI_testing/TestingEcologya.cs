@@ -40,7 +40,6 @@ namespace GUI_testing
 
             
             electronic_book.ReadTextBook();
-            //electronic_book.BuildCatalog(treeViewEcologya);
             BuildContentBook();
         }
 
@@ -111,6 +110,12 @@ namespace GUI_testing
         private void treeViewEcologya_AfterSelect(object sender, TreeViewEventArgs e)
         {
            webBrowserEcologya.Url = new Uri(Path.GetFullPath("html\\" + Convert.ToString(e.Node.Tag)));
+        }
+
+        private void webBrowserEcologya_NewWindow(object sender, CancelEventArgs e)
+        {
+            ((WebBrowser)sender).Url = new Uri(((WebBrowser)sender).StatusText);
+            e.Cancel = true;
         }
         
     }
