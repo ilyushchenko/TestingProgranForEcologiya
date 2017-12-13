@@ -14,18 +14,12 @@ namespace TestingProgramBusinessLogic
         private Random rnd = new Random();
         private List<Variant> m_variants;
 
-        private TestManager() {  }
-
         /// <summary>
-        /// Запуск тестирования
+        /// Конструктор менеджера тестирования
         /// </summary>
-        /// <param name="tryCount">Количество попыток</param>
-        /// <param name="testingTime">Время на выполнение теста (минут)</param>
-        public TestManager (int tryCount, int testingTime)
-	    {
+        public TestManager()
+        {
             m_variants = new List<Variant>();
-            TryCount = tryCount;
-            Countdown = new DateTime(0, 0, 0, 0, testingTime, 0);
         }
 
         /// <summary>
@@ -38,17 +32,32 @@ namespace TestingProgramBusinessLogic
         }
 
         /// <summary>
-        /// Запуск тесста и получение данных варианта
+        /// Запуск теста и получение данных варианта
         /// </summary>
+        /// <param name="tryCount">Количество попыток</param>
+        /// <param name="testingTime">Время на выполнение теста (минут)</param>
         /// <returns>Вариант решения типа <see cref="Variant"/></returns>
-        public Variant StartTest()
+        public Variant StartTest(int tryCount, int testingTime)
         {
+            TryCount = tryCount;
+            Countdown = new DateTime(0, 0, 0, 0, testingTime, 0);
             int rndIndex = rnd.Next(m_variants.Count);
             return m_variants[rndIndex];
         }
 
+        /// <summary>
+        /// Метод отсчета. Должен вызываться каждую секунду.
+        /// </summary>
+        public void Tick()
+        {
+            if(!IsTestFinished())
+            {
+                Countdown.Subtract(new DateTime(0, 0, 0, 0, 0, 1));
+            }
+        }
+
         // Метод проверки окончания:
-        public bool IsTestFinished(int currentTime)
+        public bool IsTestFinished()
         {
             return currentTime >= m_finishTime ? true : false;
         }
