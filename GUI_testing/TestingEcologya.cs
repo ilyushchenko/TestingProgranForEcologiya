@@ -33,7 +33,7 @@ namespace GUI_testing
             BuildTabelVariant(new Variant());
             BuildContentBook(electronic_book.ReadTextBook());
             webBrowserEcologya.Url = new Uri(Path.GetFullPath("html\\start.html"));
-            
+            //gggg
         }
 
         private void test_manager_Messaging(object sendler, TestingEventArgs e)
