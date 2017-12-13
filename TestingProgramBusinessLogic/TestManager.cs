@@ -77,7 +77,7 @@ namespace TestingProgramBusinessLogic
         {
             if (Countdown.TotalSeconds > 0)
             {
-                Countdown.Subtract(new TimeSpan(0, 0, 1));
+                Countdown = Countdown.Subtract(new TimeSpan(0, 0, 1));
                 if (TryCount == 0)
                 {
                     Messaging.Invoke(this, new TestingEventArgs(TestStatus.EndOfTryCount, String.Format("Количество попыток исчерпано!")));
