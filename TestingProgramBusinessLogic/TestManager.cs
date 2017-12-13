@@ -8,24 +8,43 @@ namespace TestingProgramBusinessLogic
 {
     public class TestManager
     {
-        private int m_tryCount;
-        private int m_finishTime;
+        public int TryCount { get; private set; }
+        public DateTime Countdown { get; private set; }
 
-        private Variants m_variants;
+        private Random rnd = new Random();
+        private List<Variant> m_variants;
 
         private TestManager() {  }
-        
-        public TestManager (int tryCount, int finishTime)
-	    {
-            m_tryCount = tryCount;
-            m_finishTime = finishTime;
-	    }
 
-        // Получение пользователем данных теста:
-        // TODO: На view-часть не должен передаваться ответ! Мб разделить:      данные -> view-часть;      anwser -> prop
+        /// <summary>
+        /// Запуск тестирования
+        /// </summary>
+        /// <param name="tryCount">Количество попыток</param>
+        /// <param name="testingTime">Время на выполнение теста (минут)</param>
+        public TestManager (int tryCount, int testingTime)
+	    {
+            m_variants = new List<Variant>();
+            TryCount = tryCount;
+            Countdown = new DateTime(0, 0, 0, 0, testingTime, 0);
+        }
+
+        /// <summary>
+        /// Метод загрузки коллекции вариантов
+        /// </summary>
+        /// <param name="loader">Коллекция объектов, реализующая интерефейс <see cref="IDataLoader{T}"/></param>
+        public void Load(IDataLoader<Variant> loader)
+        {
+            m_variants.AddRange(loader.GetCollection());
+        }
+
+        /// <summary>
+        /// Запуск тесста и получение данных варианта
+        /// </summary>
+        /// <returns>Вариант решения типа <see cref="Variant"/></returns>
         public Variant StartTest()
         {
-            // return m_variants.< Функция получения данных случайного варианта >;
+            int rndIndex = rnd.Next(m_variants.Count);
+            return m_variants[rndIndex];
         }
 
         // Метод проверки окончания:
