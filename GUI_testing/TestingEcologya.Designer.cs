@@ -112,7 +112,6 @@
             this.treeViewEcologya.Size = new System.Drawing.Size(179, 624);
             this.treeViewEcologya.TabIndex = 0;
             this.treeViewEcologya.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.treeViewEcologya_AfterSelect);
-            this.treeViewEcologya.Click += new System.EventHandler(this.treeViewEcologya_Click);
             // 
             // webBrowserEcologya
             // 
