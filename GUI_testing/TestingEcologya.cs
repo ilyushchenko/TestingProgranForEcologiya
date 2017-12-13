@@ -43,7 +43,7 @@ namespace GUI_testing
             //    this.dataGridViewEcologya.Rows.Add();
             //}
             BuildContentBook(electronic_book.ReadTextBook());
-            webBrowserEcologya.Url = new Uri(Path.GetFullPath("html\\vved.html"));
+            webBrowserEcologya.Url = new Uri(Path.GetFullPath("html\\start.html"));
         }
 
         private void BuildContentBook(List<ContentsElectronickBook> contents_electronic_book)
