@@ -120,12 +120,17 @@
   <metadata name="timerTest.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>
-  <metadata name="Amount.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="Value.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
+  <data name="labelTask.Text" xml:space="preserve">
+    <value>На решение теста даестя 45 минут время отсчитывается
+ с момента нажатия кнопки "Начать тест". Максимальное 
+количество попыток 3.При вычислении на каждом шагу 
+округлять большую сторону значение до тысячных.
+
+При расчете принять следующие значения равными:
+пи = 3,14
+A = 120
+Vн = 0,5 м/с</value>
+  </data>
   <metadata name="Amount.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>

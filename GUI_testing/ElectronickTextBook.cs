@@ -10,18 +10,17 @@ namespace GUI_testing
 {
     public struct ContentsElectronickBook
     {
-        public int number_sections { set; get; }
+        public int number_sections {  set; get; }
         public int number_subsections { set; get; }
-        public string title_division { set; get; }
-        public string link_site { set; get; }
+        public string title_division {  set; get; }
+        public string link_site {  set; get; }
     }
     class ElectronickTextBook
     {
-
-        ContentsElectronickBook contents_books = new ContentsElectronickBook();
+       ContentsElectronickBook contents_books = new ContentsElectronickBook();
         List<ContentsElectronickBook> list_contents_books = new List<ContentsElectronickBook>();
         
-        public void ReadTextBook()
+        public List<ContentsElectronickBook> ReadTextBook()
         {
             using (StreamReader read_text_book = new StreamReader("html\\index.txt", encoding: Encoding.GetEncoding(1251)))
             {
@@ -35,10 +34,8 @@ namespace GUI_testing
                     list_contents_books.Add(contents_books);
                 } 
             }
+            return list_contents_books;
         }
-        public List<ContentsElectronickBook> ContentBook
-        {
-            get { return list_contents_books; }
-        }
+
     }
 }

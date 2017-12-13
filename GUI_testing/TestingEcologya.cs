@@ -21,6 +21,7 @@ namespace GUI_testing
         ElectronickTextBook electronic_book = new ElectronickTextBook();
         private void TestingEcologya_Load(object sender, EventArgs e)
         {
+            //Пример использования по циклу можно построить таблицк с вариантом
             this.dataGridViewEcologya.Rows.Add("№ Варианта");
             this.dataGridViewEcologya.Rows.Add("Вещество");
             this.dataGridViewEcologya.Rows.Add("ПДК, мг/м^3");
@@ -35,21 +36,23 @@ namespace GUI_testing
             this.dataGridViewEcologya.Rows.Add("a");
             this.dataGridViewEcologya.Rows.Add("b");
             this.dataGridViewEcologya.Rows.Add("Mx, % от ПДВ");
-            this.dataGridViewEcologya.Rows.Add("w0, м/с");
-            dataGridViewEcologya.Rows[1].Cells[1].ReadOnly = true;
+            this.dataGridViewEcologya.Rows.Add("w0, м/с", "1.5");
+            //for (int k = 0; k < 10; k++ )
+            //{
+            //    this.dataGridViewEcologya.Rows.Add();
+            //}
+               // dataGridViewEcologya.Rows[1].Cells[1].ReadOnly = true;
 
-            
-            electronic_book.ReadTextBook();
-            BuildContentBook();
+           // electronic_book.ReadTextBook();
+            BuildContentBook(electronic_book.ReadTextBook());
         }
 
-        private void BuildContentBook()
+        private void BuildContentBook(List<ContentsElectronickBook> contents_electronic_book)
         {
            // int[] list = new int[] { 5, 12, 14, 21, 28 };
-          
-            foreach (var content_book in electronic_book.ContentBook)
+
+            foreach (var content_book in contents_electronic_book)
             {
-               
                // int z = 2;
                 //if (content_book.number_subsections == 0)
                 //{
