@@ -37,6 +37,10 @@
             this.treeViewEcologya = new System.Windows.Forms.TreeView();
             this.webBrowserEcologya = new System.Windows.Forms.WebBrowser();
             this.contextMenuWebBrowser = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.ZoomPlusToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ZoomMinusToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ZoomNormalРазмерToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.CloseCatalogToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tabPageTester = new System.Windows.Forms.TabPage();
             this.groupBoxWarning = new System.Windows.Forms.GroupBox();
             this.labelTask = new System.Windows.Forms.Label();
@@ -53,12 +57,8 @@
             this.Amount = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Value = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBoxTask = new System.Windows.Forms.GroupBox();
-            this.ZoomPlusToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.ZoomMinusToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.ZoomNormalРазмерToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.CloseCatalogToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.visualStyler1 = new SkinSoft.VisualStyler.VisualStyler(this.components);
             this.labelExercise = new System.Windows.Forms.Label();
+            this.visualStyler1 = new SkinSoft.VisualStyler.VisualStyler(this.components);
             this.tabControlEcologya.SuspendLayout();
             this.tabPageBook.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
@@ -90,7 +90,7 @@
             this.tabControlEcologya.Name = "tabControlEcologya";
             this.tabControlEcologya.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.tabControlEcologya.SelectedIndex = 0;
-            this.tabControlEcologya.Size = new System.Drawing.Size(771, 588);
+            this.tabControlEcologya.Size = new System.Drawing.Size(779, 595);
             this.tabControlEcologya.TabIndex = 0;
             this.tabControlEcologya.Tag = "XC";
             // 
@@ -101,7 +101,7 @@
             this.tabPageBook.Location = new System.Drawing.Point(23, 4);
             this.tabPageBook.Name = "tabPageBook";
             this.tabPageBook.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageBook.Size = new System.Drawing.Size(744, 580);
+            this.tabPageBook.Size = new System.Drawing.Size(752, 587);
             this.tabPageBook.TabIndex = 0;
             this.tabPageBook.Tag = "IC";
             this.tabPageBook.Text = "Электронный учебник";
@@ -121,8 +121,8 @@
             // 
             this.splitContainer1.Panel2.Controls.Add(this.webBrowserEcologya);
             this.splitContainer1.Panel2.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.splitContainer1.Size = new System.Drawing.Size(738, 574);
-            this.splitContainer1.SplitterDistance = 179;
+            this.splitContainer1.Size = new System.Drawing.Size(746, 581);
+            this.splitContainer1.SplitterDistance = 180;
             this.splitContainer1.TabIndex = 0;
             // 
             // treeViewEcologya
@@ -132,7 +132,7 @@
             this.treeViewEcologya.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
             this.treeViewEcologya.Location = new System.Drawing.Point(0, 0);
             this.treeViewEcologya.Name = "treeViewEcologya";
-            this.treeViewEcologya.Size = new System.Drawing.Size(179, 574);
+            this.treeViewEcologya.Size = new System.Drawing.Size(180, 581);
             this.treeViewEcologya.TabIndex = 0;
             this.treeViewEcologya.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.treeViewEcologya_AfterSelect);
             // 
@@ -145,10 +145,8 @@
             this.webBrowserEcologya.MinimumSize = new System.Drawing.Size(20, 20);
             this.webBrowserEcologya.Name = "webBrowserEcologya";
             this.webBrowserEcologya.ScriptErrorsSuppressed = true;
-            this.webBrowserEcologya.Size = new System.Drawing.Size(555, 574);
+            this.webBrowserEcologya.Size = new System.Drawing.Size(562, 581);
             this.webBrowserEcologya.TabIndex = 0;
-            this.webBrowserEcologya.Url = new System.Uri("C:\\Users\\Андрей\\Source\\Repos\\TestingProgranForEcologiya\\GUI_testing\\bin\\Debug\\htm" +
-        "l\\vved.html", System.UriKind.Absolute);
             this.webBrowserEcologya.WebBrowserShortcutsEnabled = false;
             this.webBrowserEcologya.NewWindow += new System.ComponentModel.CancelEventHandler(this.webBrowserEcologya_NewWindow);
             // 
@@ -161,6 +159,42 @@
             this.CloseCatalogToolStripMenuItem});
             this.contextMenuWebBrowser.Name = "contextMenuWebBrowser";
             this.contextMenuWebBrowser.Size = new System.Drawing.Size(217, 108);
+            // 
+            // ZoomPlusToolStripMenuItem
+            // 
+            this.ZoomPlusToolStripMenuItem.Image = global::GUI_testing.Properties.Resources.Zoom_In;
+            this.ZoomPlusToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.ZoomPlusToolStripMenuItem.Name = "ZoomPlusToolStripMenuItem";
+            this.ZoomPlusToolStripMenuItem.Size = new System.Drawing.Size(216, 26);
+            this.ZoomPlusToolStripMenuItem.Text = "Увеличить";
+            this.ZoomPlusToolStripMenuItem.Click += new System.EventHandler(this.ZoomPlusToolStripMenuItem_Click);
+            // 
+            // ZoomMinusToolStripMenuItem
+            // 
+            this.ZoomMinusToolStripMenuItem.Image = global::GUI_testing.Properties.Resources.Zoom_Out;
+            this.ZoomMinusToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.ZoomMinusToolStripMenuItem.Name = "ZoomMinusToolStripMenuItem";
+            this.ZoomMinusToolStripMenuItem.Size = new System.Drawing.Size(216, 26);
+            this.ZoomMinusToolStripMenuItem.Text = "Уменьшить";
+            this.ZoomMinusToolStripMenuItem.Click += new System.EventHandler(this.ZoomMinusToolStripMenuItem_Click);
+            // 
+            // ZoomNormalРазмерToolStripMenuItem
+            // 
+            this.ZoomNormalРазмерToolStripMenuItem.Image = global::GUI_testing.Properties.Resources.Search__1_;
+            this.ZoomNormalРазмерToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.ZoomNormalРазмерToolStripMenuItem.Name = "ZoomNormalРазмерToolStripMenuItem";
+            this.ZoomNormalРазмерToolStripMenuItem.Size = new System.Drawing.Size(216, 26);
+            this.ZoomNormalРазмерToolStripMenuItem.Text = "Обычный размер";
+            this.ZoomNormalРазмерToolStripMenuItem.Click += new System.EventHandler(this.ZoomNormalРазмерToolStripMenuItem_Click);
+            // 
+            // CloseCatalogToolStripMenuItem
+            // 
+            this.CloseCatalogToolStripMenuItem.Image = global::GUI_testing.Properties.Resources.Button_First;
+            this.CloseCatalogToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.CloseCatalogToolStripMenuItem.Name = "CloseCatalogToolStripMenuItem";
+            this.CloseCatalogToolStripMenuItem.Size = new System.Drawing.Size(216, 26);
+            this.CloseCatalogToolStripMenuItem.Text = "Закрыть дерево каталога";
+            this.CloseCatalogToolStripMenuItem.Click += new System.EventHandler(this.CloseCatalogToolStripMenuItem_Click);
             // 
             // tabPageTester
             // 
@@ -323,48 +357,6 @@
             this.groupBoxTask.TabStop = false;
             this.groupBoxTask.Text = "Задание по варианту";
             // 
-            // ZoomPlusToolStripMenuItem
-            // 
-            this.ZoomPlusToolStripMenuItem.Image = global::GUI_testing.Properties.Resources.Zoom_In;
-            this.ZoomPlusToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.ZoomPlusToolStripMenuItem.Name = "ZoomPlusToolStripMenuItem";
-            this.ZoomPlusToolStripMenuItem.Size = new System.Drawing.Size(216, 26);
-            this.ZoomPlusToolStripMenuItem.Text = "Увеличить";
-            this.ZoomPlusToolStripMenuItem.Click += new System.EventHandler(this.ZoomPlusToolStripMenuItem_Click);
-            // 
-            // ZoomMinusToolStripMenuItem
-            // 
-            this.ZoomMinusToolStripMenuItem.Image = global::GUI_testing.Properties.Resources.Zoom_Out;
-            this.ZoomMinusToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.ZoomMinusToolStripMenuItem.Name = "ZoomMinusToolStripMenuItem";
-            this.ZoomMinusToolStripMenuItem.Size = new System.Drawing.Size(216, 26);
-            this.ZoomMinusToolStripMenuItem.Text = "Уменьшить";
-            this.ZoomMinusToolStripMenuItem.Click += new System.EventHandler(this.ZoomMinusToolStripMenuItem_Click);
-            // 
-            // ZoomNormalРазмерToolStripMenuItem
-            // 
-            this.ZoomNormalРазмерToolStripMenuItem.Image = global::GUI_testing.Properties.Resources.Search__1_;
-            this.ZoomNormalРазмерToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.ZoomNormalРазмерToolStripMenuItem.Name = "ZoomNormalРазмерToolStripMenuItem";
-            this.ZoomNormalРазмерToolStripMenuItem.Size = new System.Drawing.Size(216, 26);
-            this.ZoomNormalРазмерToolStripMenuItem.Text = "Обычный размер";
-            this.ZoomNormalРазмерToolStripMenuItem.Click += new System.EventHandler(this.ZoomNormalРазмерToolStripMenuItem_Click);
-            // 
-            // CloseCatalogToolStripMenuItem
-            // 
-            this.CloseCatalogToolStripMenuItem.Image = global::GUI_testing.Properties.Resources.Button_First;
-            this.CloseCatalogToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.CloseCatalogToolStripMenuItem.Name = "CloseCatalogToolStripMenuItem";
-            this.CloseCatalogToolStripMenuItem.Size = new System.Drawing.Size(216, 26);
-            this.CloseCatalogToolStripMenuItem.Text = "Закрыть дерево каталога";
-            this.CloseCatalogToolStripMenuItem.Click += new System.EventHandler(this.CloseCatalogToolStripMenuItem_Click);
-            // 
-            // visualStyler1
-            // 
-            this.visualStyler1.HostForm = this;
-            this.visualStyler1.License = ((SkinSoft.VisualStyler.Licensing.VisualStylerLicense)(resources.GetObject("visualStyler1.License")));
-            this.visualStyler1.LoadVisualStyle(null, "Kupo XP 2 Green (Normal).vssf");
-            // 
             // labelExercise
             // 
             this.labelExercise.AutoSize = true;
@@ -375,11 +367,17 @@
             this.labelExercise.TabIndex = 0;
             this.labelExercise.Text = resources.GetString("labelExercise.Text");
             // 
+            // visualStyler1
+            // 
+            this.visualStyler1.HostForm = this;
+            this.visualStyler1.License = ((SkinSoft.VisualStyler.Licensing.VisualStylerLicense)(resources.GetObject("visualStyler1.License")));
+            this.visualStyler1.LoadVisualStyle(null, "Kupo XP 2 Green (Normal).vssf");
+            // 
             // TestingEcologya
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(771, 588);
+            this.ClientSize = new System.Drawing.Size(779, 595);
             this.Controls.Add(this.tabControlEcologya);
             this.Name = "TestingEcologya";
             this.Text = "Тестирование по Экологии";
