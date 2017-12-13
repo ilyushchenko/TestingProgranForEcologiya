@@ -58,6 +58,7 @@
             this.ZoomNormalРазмерToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.CloseCatalogToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.visualStyler1 = new SkinSoft.VisualStyler.VisualStyler(this.components);
+            this.labelExercise = new System.Windows.Forms.Label();
             this.tabControlEcologya.SuspendLayout();
             this.tabPageBook.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
@@ -70,6 +71,7 @@
             this.groupBoxControl.SuspendLayout();
             this.groupBoxDataVariant.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewEcologya)).BeginInit();
+            this.groupBoxTask.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.visualStyler1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -181,7 +183,7 @@
             this.groupBoxWarning.Controls.Add(this.labelTask);
             this.groupBoxWarning.Location = new System.Drawing.Point(382, 8);
             this.groupBoxWarning.Name = "groupBoxWarning";
-            this.groupBoxWarning.Size = new System.Drawing.Size(353, 202);
+            this.groupBoxWarning.Size = new System.Drawing.Size(353, 176);
             this.groupBoxWarning.TabIndex = 5;
             this.groupBoxWarning.TabStop = false;
             this.groupBoxWarning.Text = "Внимание";
@@ -205,7 +207,7 @@
             this.groupBoxControl.Controls.Add(this.labelTime);
             this.groupBoxControl.Controls.Add(this.labelTimeHint);
             this.groupBoxControl.Controls.Add(this.butStart);
-            this.groupBoxControl.Location = new System.Drawing.Point(384, 216);
+            this.groupBoxControl.Location = new System.Drawing.Point(384, 190);
             this.groupBoxControl.Name = "groupBoxControl";
             this.groupBoxControl.Size = new System.Drawing.Size(354, 231);
             this.groupBoxControl.TabIndex = 4;
@@ -277,7 +279,7 @@
             // groupBoxDataVariant
             // 
             this.groupBoxDataVariant.Controls.Add(this.dataGridViewEcologya);
-            this.groupBoxDataVariant.Location = new System.Drawing.Point(6, 159);
+            this.groupBoxDataVariant.Location = new System.Drawing.Point(6, 123);
             this.groupBoxDataVariant.Name = "groupBoxDataVariant";
             this.groupBoxDataVariant.Size = new System.Drawing.Size(370, 392);
             this.groupBoxDataVariant.TabIndex = 3;
@@ -313,9 +315,10 @@
             // 
             // groupBoxTask
             // 
+            this.groupBoxTask.Controls.Add(this.labelExercise);
             this.groupBoxTask.Location = new System.Drawing.Point(6, 8);
             this.groupBoxTask.Name = "groupBoxTask";
-            this.groupBoxTask.Size = new System.Drawing.Size(370, 145);
+            this.groupBoxTask.Size = new System.Drawing.Size(370, 111);
             this.groupBoxTask.TabIndex = 2;
             this.groupBoxTask.TabStop = false;
             this.groupBoxTask.Text = "Задание по варианту";
@@ -360,7 +363,17 @@
             // 
             this.visualStyler1.HostForm = this;
             this.visualStyler1.License = ((SkinSoft.VisualStyler.Licensing.VisualStylerLicense)(resources.GetObject("visualStyler1.License")));
-            this.visualStyler1.LoadVisualStyle(null, "Gel XP 2.2 (gel).vssf");
+            this.visualStyler1.LoadVisualStyle(null, "Kupo XP 2 Green (Normal).vssf");
+            // 
+            // labelExercise
+            // 
+            this.labelExercise.AutoSize = true;
+            this.labelExercise.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.labelExercise.Location = new System.Drawing.Point(5, 19);
+            this.labelExercise.Name = "labelExercise";
+            this.labelExercise.Size = new System.Drawing.Size(361, 75);
+            this.labelExercise.TabIndex = 0;
+            this.labelExercise.Text = resources.GetString("labelExercise.Text");
             // 
             // TestingEcologya
             // 
@@ -385,6 +398,8 @@
             this.groupBoxControl.PerformLayout();
             this.groupBoxDataVariant.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewEcologya)).EndInit();
+            this.groupBoxTask.ResumeLayout(false);
+            this.groupBoxTask.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.visualStyler1)).EndInit();
             this.ResumeLayout(false);
 
@@ -420,6 +435,7 @@
         private System.Windows.Forms.ToolStripMenuItem ZoomNormalРазмерToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem CloseCatalogToolStripMenuItem;
         private SkinSoft.VisualStyler.VisualStyler visualStyler1;
+        private System.Windows.Forms.Label labelExercise;
     }
 }
 
