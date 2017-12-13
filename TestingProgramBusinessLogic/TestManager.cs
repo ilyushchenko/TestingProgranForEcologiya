@@ -13,6 +13,7 @@ namespace TestingProgramBusinessLogic
 
         private Random rnd = new Random();
         private List<Variant> m_variants;
+        private int m_currentVariant;
 
         /// <summary>
         /// Конструктор менеджера тестирования
@@ -41,8 +42,8 @@ namespace TestingProgramBusinessLogic
         {
             TryCount = tryCount;
             Countdown = new DateTime(0, 0, 0, 0, testingTime, 0);
-            int rndIndex = rnd.Next(m_variants.Count);
-            return m_variants[rndIndex];
+            m_currentVariant = rnd.Next(m_variants.Count);
+            return m_variants[m_currentVariant];
         }
 
         /// <summary>
@@ -62,12 +63,20 @@ namespace TestingProgramBusinessLogic
             return currentTime >= m_finishTime ? true : false;
         }
 
+        /// <summary>
+        /// Метод проверки варианта
+        /// </summary>
+        /// <param name="userAnwser">Ответ пользователя</param>
+        /// <returns>В случае правильного отвера возвращает </returns>
         public bool CheckAnwser(double userAnwser)
         {
             double errorValue = 0.01;
-            // TODO: См. TODO выше xD
-            // return (userAnwser > <правильный ответ> + <правильный ответ> * errorValue) && (userAnwser < <правильный ответ> - <правильный ответ> * errorValue);
-            return Math.Abs(<правильный ответ> - userAnwser) < errorValue;
+            bool result = result = Math.Abs(m_variants[m_currentVariant].Answer - userAnwser) < errorValue;
+            if (!result)
+            {
+                TryCount--;
+            }
+            return result;
         }
         
     }
