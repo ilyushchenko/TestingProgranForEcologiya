@@ -57,6 +57,7 @@
             this.ZoomMinusToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ZoomNormalРазмерToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.CloseCatalogToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.visualStyler1 = new SkinSoft.VisualStyler.VisualStyler(this.components);
             this.tabControlEcologya.SuspendLayout();
             this.tabPageBook.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
@@ -69,6 +70,7 @@
             this.groupBoxControl.SuspendLayout();
             this.groupBoxDataVariant.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewEcologya)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.visualStyler1)).BeginInit();
             this.SuspendLayout();
             // 
             // timerTest
@@ -354,6 +356,12 @@
             this.CloseCatalogToolStripMenuItem.Text = "Закрыть дерево каталога";
             this.CloseCatalogToolStripMenuItem.Click += new System.EventHandler(this.CloseCatalogToolStripMenuItem_Click);
             // 
+            // visualStyler1
+            // 
+            this.visualStyler1.HostForm = this;
+            this.visualStyler1.License = ((SkinSoft.VisualStyler.Licensing.VisualStylerLicense)(resources.GetObject("visualStyler1.License")));
+            this.visualStyler1.LoadVisualStyle(null, "Gel XP 2.2 (gel).vssf");
+            // 
             // TestingEcologya
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -377,6 +385,7 @@
             this.groupBoxControl.PerformLayout();
             this.groupBoxDataVariant.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewEcologya)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.visualStyler1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -410,6 +419,7 @@
         private System.Windows.Forms.ToolStripMenuItem ZoomMinusToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem ZoomNormalРазмерToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem CloseCatalogToolStripMenuItem;
+        private SkinSoft.VisualStyler.VisualStyler visualStyler1;
     }
 }
 
