@@ -1,38 +1,58 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace TestingProgramBusinessLogic
 {
     public class TestManager
     {
+        #region Defenitions
+
+        /// <summary>
+        /// Информационный делегат
+        /// </summary>
+        /// <param name="sendler">Объект инициатор события</param>
+        /// <param name="e">Аргументы события</param>
         public delegate void MessagingDelegate(object sendler, TestingEventArgs e);
+
+        /// <summary>
+        /// Информационное событие
+        /// </summary>
         public event MessagingDelegate Messaging = (obj, e) => { };
 
+        /// <summary>
+        /// Количество попыток
+        /// </summary>
         public int TryCount { get; private set; }
-        public int Countdown { get; private set; }
 
+        /// <summary>
+        /// Обратный отсчет
+        /// </summary>
+        public TimeSpan Countdown { get; private set; }
 
+        /// <summary>
+        /// Используется, для получения случайного варианта
+        /// </summary>
         private Random rnd = new Random();
+
+        /// <summary>
+        /// Список вариантов
+        /// </summary>
         private List<Variant> m_variants;
+
+        /// <summary>
+        /// Номер текущего варианта
+        /// </summary>
         private int m_currentVariant;
+
+        #endregion #region Defenitions
 
         /// <summary>
         /// Конструктор менеджера тестирования
         /// </summary>
-        public TestManager()
+        /// <param name="loader">Коллекция объектов, реализующая интерефейс <see cref="IDataLoader{T}"/></param>
+        public TestManager(IDataLoader<Variant> loader)
         {
             m_variants = new List<Variant>();
-        }
-
-        /// <summary>
-        /// Метод загрузки коллекции вариантов
-        /// </summary>
-        /// <param name="loader">Коллекция объектов, реализующая интерефейс <see cref="IDataLoader{T}"/></param>
-        public void Load(IDataLoader<Variant> loader)
-        {
             m_variants.AddRange(loader.GetCollection());
         }
 
@@ -44,8 +64,8 @@ namespace TestingProgramBusinessLogic
         /// <returns>Вариант решения типа <see cref="Variant"/></returns>
         public Variant StartTest(int tryCount, int testingTime)
         {
-            TryCount = tryCount;
-            Countdown = 60 * testingTime;
+            TryCount = tryCount > 0 ? tryCount : 1;
+            Countdown = new TimeSpan(0, testingTime > 0 ? testingTime : 1, 0);
             m_currentVariant = rnd.Next(m_variants.Count);
             return m_variants[m_currentVariant];
         }
@@ -55,9 +75,17 @@ namespace TestingProgramBusinessLogic
         /// </summary>
         public void Tick()
         {
-            if(!IsTestFinished())
+            if (Countdown.TotalSeconds > 0)
             {
-                Countdown--;
+                Countdown.Subtract(new TimeSpan(0, 0, 1));
+                if (TryCount == 0)
+                {
+                    Messaging.Invoke(this, new TestingEventArgs(TestStatus.EndOfTryCount, String.Format("Количество попыток исчерпано!")));
+                }
+            }
+            else
+            {
+                Messaging.Invoke(this, new TestingEventArgs(TestStatus.EndOfTime, "Время закончилось!"));
             }
         }
 
@@ -67,7 +95,8 @@ namespace TestingProgramBusinessLogic
         /// <returns>Возвращает true, если тест закончен, в противном случае возвращает false</returns>
         public bool IsTestFinished()
         {
-            return !(TryCount > 0 && Countdown > 0);
+            bool finished = !(TryCount > 0 && Countdown.TotalSeconds > 0);
+            return finished;
         }
 
         /// <summary>
@@ -83,7 +112,10 @@ namespace TestingProgramBusinessLogic
             {
                 TryCount--;
                 Messaging.Invoke(this, new TestingEventArgs(TestStatus.WrongAnswer, String.Format("Неправильный ответ!\nОставшееся количество попыток: {0}", TryCount)));
-
+            }
+            else
+            {
+                Messaging.Invoke(this, new TestingEventArgs(TestStatus.Complete, String.Format("Поздравляем!\nВы успешно выполнили тест!")));
             }
             return result;
         }
