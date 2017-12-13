@@ -79,6 +79,7 @@ namespace GUI_testing
         private void treeViewEcologya_AfterSelect(object sender, TreeViewEventArgs e)
         {
            webBrowserEcologya.Url = new Uri(Path.GetFullPath("html\\" + Convert.ToString(e.Node.Tag)));
+          // MessageBox.Show(Path.GetFullPath("html\\" + Convert.ToString(e.Node.Tag)));
         }
 
         private void webBrowserEcologya_NewWindow(object sender, CancelEventArgs e)
@@ -107,14 +108,6 @@ namespace GUI_testing
                 butResult.Enabled = false;
             }
         }
-
-        private void tabControlEcologya_Click(object sender, EventArgs e)
-        {
-            
-                
-            
-        }
-
         private void ZoomPlusToolStripMenuItem_Click(object sender, EventArgs e)
         {
             webBrowserEcologya.Document.Body.Style = "zoom:125%;";

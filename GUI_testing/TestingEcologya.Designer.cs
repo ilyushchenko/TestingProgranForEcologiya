@@ -89,7 +89,6 @@
             this.tabControlEcologya.Size = new System.Drawing.Size(771, 588);
             this.tabControlEcologya.TabIndex = 0;
             this.tabControlEcologya.Tag = "XC";
-            this.tabControlEcologya.Click += new System.EventHandler(this.tabControlEcologya_Click);
             // 
             // tabPageBook
             // 
