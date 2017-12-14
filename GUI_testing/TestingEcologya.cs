@@ -22,7 +22,7 @@ namespace GUI_testing
             test_manager.Messaging += test_manager_Messaging;
             InitializeComponent();
             panelTester.Location = new Point(
-            this.ClientSize.Width / 2 - panelTester.Size.Width / 2,
+             this.ClientSize.Width / 2 - panelTester.Size.Width / 2,
              this.ClientSize.Height / 2 - panelTester.Size.Height / 2);
             panelTester.Anchor = AnchorStyles.None;
         }
@@ -123,6 +123,7 @@ namespace GUI_testing
             this.dataGridViewEcologya.Rows.Add("ПДК, мг/м^3", variant.PDK);
             this.dataGridViewEcologya.Rows.Add("Cф, мг/м^3", variant.C_f);
             this.dataGridViewEcologya.Rows.Add("Н, м", variant.H);
+            this.dataGridViewEcologya.Rows.Add("Температура", variant.Temperature);
             this.dataGridViewEcologya.Rows.Add("F", variant.F);
             this.dataGridViewEcologya.Rows.Add("m", variant.M);
             this.dataGridViewEcologya.Rows.Add("n", variant.N);

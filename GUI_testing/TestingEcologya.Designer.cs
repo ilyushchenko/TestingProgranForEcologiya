@@ -42,8 +42,13 @@
             this.ZoomNormalРазмерToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.CloseCatalogToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tabPageTester = new System.Windows.Forms.TabPage();
+            this.panelTester = new System.Windows.Forms.Panel();
             this.groupBoxWarning = new System.Windows.Forms.GroupBox();
             this.labelTask = new System.Windows.Forms.Label();
+            this.groupBoxDataVariant = new System.Windows.Forms.GroupBox();
+            this.dataGridViewEcologya = new System.Windows.Forms.DataGridView();
+            this.Amount = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Value = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBoxControl = new System.Windows.Forms.GroupBox();
             this.panelResult = new System.Windows.Forms.Panel();
             this.butResult = new System.Windows.Forms.Button();
@@ -55,14 +60,9 @@
             this.labelTime = new System.Windows.Forms.Label();
             this.labelTimeHint = new System.Windows.Forms.Label();
             this.butStart = new System.Windows.Forms.Button();
-            this.groupBoxDataVariant = new System.Windows.Forms.GroupBox();
-            this.dataGridViewEcologya = new System.Windows.Forms.DataGridView();
-            this.Amount = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Value = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBoxTask = new System.Windows.Forms.GroupBox();
             this.labelExercise = new System.Windows.Forms.Label();
             this.visualStyler1 = new SkinSoft.VisualStyler.VisualStyler(this.components);
-            this.panelTester = new System.Windows.Forms.Panel();
             this.tabControlEcologya.SuspendLayout();
             this.tabPageBook.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
@@ -71,16 +71,16 @@
             this.splitContainer1.SuspendLayout();
             this.contextMenuWebBrowser.SuspendLayout();
             this.tabPageTester.SuspendLayout();
+            this.panelTester.SuspendLayout();
             this.groupBoxWarning.SuspendLayout();
+            this.groupBoxDataVariant.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewEcologya)).BeginInit();
             this.groupBoxControl.SuspendLayout();
             this.panelResult.SuspendLayout();
             this.panelRemainingTime.SuspendLayout();
             this.panelTime.SuspendLayout();
-            this.groupBoxDataVariant.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewEcologya)).BeginInit();
             this.groupBoxTask.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.visualStyler1)).BeginInit();
-            this.panelTester.SuspendLayout();
             this.SuspendLayout();
             // 
             // timerTest
@@ -101,7 +101,7 @@
             this.tabControlEcologya.Name = "tabControlEcologya";
             this.tabControlEcologya.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.tabControlEcologya.SelectedIndex = 0;
-            this.tabControlEcologya.Size = new System.Drawing.Size(789, 562);
+            this.tabControlEcologya.Size = new System.Drawing.Size(805, 576);
             this.tabControlEcologya.TabIndex = 0;
             this.tabControlEcologya.Tag = "XC";
             // 
@@ -113,7 +113,7 @@
             this.tabPageBook.Margin = new System.Windows.Forms.Padding(4);
             this.tabPageBook.Name = "tabPageBook";
             this.tabPageBook.Padding = new System.Windows.Forms.Padding(4);
-            this.tabPageBook.Size = new System.Drawing.Size(751, 550);
+            this.tabPageBook.Size = new System.Drawing.Size(774, 568);
             this.tabPageBook.TabIndex = 0;
             this.tabPageBook.Tag = "IC";
             this.tabPageBook.Text = "Электронный учебник";
@@ -134,8 +134,8 @@
             // 
             this.splitContainer1.Panel2.Controls.Add(this.webBrowserEcologya);
             this.splitContainer1.Panel2.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.splitContainer1.Size = new System.Drawing.Size(743, 542);
-            this.splitContainer1.SplitterDistance = 178;
+            this.splitContainer1.Size = new System.Drawing.Size(766, 560);
+            this.splitContainer1.SplitterDistance = 183;
             this.splitContainer1.SplitterWidth = 5;
             this.splitContainer1.TabIndex = 0;
             // 
@@ -147,7 +147,7 @@
             this.treeViewEcologya.Location = new System.Drawing.Point(0, 0);
             this.treeViewEcologya.Margin = new System.Windows.Forms.Padding(4);
             this.treeViewEcologya.Name = "treeViewEcologya";
-            this.treeViewEcologya.Size = new System.Drawing.Size(178, 542);
+            this.treeViewEcologya.Size = new System.Drawing.Size(183, 560);
             this.treeViewEcologya.TabIndex = 0;
             this.treeViewEcologya.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.treeViewEcologya_AfterSelect);
             // 
@@ -161,7 +161,7 @@
             this.webBrowserEcologya.MinimumSize = new System.Drawing.Size(27, 26);
             this.webBrowserEcologya.Name = "webBrowserEcologya";
             this.webBrowserEcologya.ScriptErrorsSuppressed = true;
-            this.webBrowserEcologya.Size = new System.Drawing.Size(560, 542);
+            this.webBrowserEcologya.Size = new System.Drawing.Size(578, 560);
             this.webBrowserEcologya.TabIndex = 0;
             this.webBrowserEcologya.WebBrowserShortcutsEnabled = false;
             this.webBrowserEcologya.NewWindow += new System.ComponentModel.CancelEventHandler(this.webBrowserEcologya_NewWindow);
@@ -221,10 +221,21 @@
             this.tabPageTester.Margin = new System.Windows.Forms.Padding(4);
             this.tabPageTester.Name = "tabPageTester";
             this.tabPageTester.Padding = new System.Windows.Forms.Padding(4);
-            this.tabPageTester.Size = new System.Drawing.Size(758, 554);
+            this.tabPageTester.Size = new System.Drawing.Size(774, 568);
             this.tabPageTester.TabIndex = 1;
             this.tabPageTester.Tag = "IC";
             this.tabPageTester.Text = "Тестирование";
+            // 
+            // panelTester
+            // 
+            this.panelTester.Controls.Add(this.groupBoxWarning);
+            this.panelTester.Controls.Add(this.groupBoxDataVariant);
+            this.panelTester.Controls.Add(this.groupBoxControl);
+            this.panelTester.Controls.Add(this.groupBoxTask);
+            this.panelTester.Location = new System.Drawing.Point(2, 2);
+            this.panelTester.Name = "panelTester";
+            this.panelTester.Size = new System.Drawing.Size(785, 538);
+            this.panelTester.TabIndex = 1;
             // 
             // groupBoxWarning
             // 
@@ -248,6 +259,46 @@
             this.labelTask.Size = new System.Drawing.Size(342, 135);
             this.labelTask.TabIndex = 0;
             this.labelTask.Text = resources.GetString("labelTask.Text");
+            // 
+            // groupBoxDataVariant
+            // 
+            this.groupBoxDataVariant.Controls.Add(this.dataGridViewEcologya);
+            this.groupBoxDataVariant.Location = new System.Drawing.Point(11, 136);
+            this.groupBoxDataVariant.Margin = new System.Windows.Forms.Padding(4);
+            this.groupBoxDataVariant.Name = "groupBoxDataVariant";
+            this.groupBoxDataVariant.Padding = new System.Windows.Forms.Padding(4);
+            this.groupBoxDataVariant.Size = new System.Drawing.Size(368, 399);
+            this.groupBoxDataVariant.TabIndex = 3;
+            this.groupBoxDataVariant.TabStop = false;
+            this.groupBoxDataVariant.Text = "Исходнные данные по варианту";
+            // 
+            // dataGridViewEcologya
+            // 
+            this.dataGridViewEcologya.AllowUserToAddRows = false;
+            this.dataGridViewEcologya.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Amount,
+            this.Value});
+            this.dataGridViewEcologya.Location = new System.Drawing.Point(12, 30);
+            this.dataGridViewEcologya.Margin = new System.Windows.Forms.Padding(4);
+            this.dataGridViewEcologya.Name = "dataGridViewEcologya";
+            this.dataGridViewEcologya.ReadOnly = true;
+            this.dataGridViewEcologya.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
+            this.dataGridViewEcologya.Size = new System.Drawing.Size(344, 355);
+            this.dataGridViewEcologya.TabIndex = 1;
+            // 
+            // Amount
+            // 
+            this.Amount.HeaderText = "Величина";
+            this.Amount.Name = "Amount";
+            this.Amount.ReadOnly = true;
+            this.Amount.Width = 150;
+            // 
+            // Value
+            // 
+            this.Value.HeaderText = "Значение";
+            this.Value.Name = "Value";
+            this.Value.ReadOnly = true;
+            this.Value.Width = 150;
             // 
             // groupBoxControl
             // 
@@ -367,46 +418,6 @@
             this.butStart.UseVisualStyleBackColor = true;
             this.butStart.Click += new System.EventHandler(this.butStart_Click);
             // 
-            // groupBoxDataVariant
-            // 
-            this.groupBoxDataVariant.Controls.Add(this.dataGridViewEcologya);
-            this.groupBoxDataVariant.Location = new System.Drawing.Point(11, 157);
-            this.groupBoxDataVariant.Margin = new System.Windows.Forms.Padding(4);
-            this.groupBoxDataVariant.Name = "groupBoxDataVariant";
-            this.groupBoxDataVariant.Padding = new System.Windows.Forms.Padding(4);
-            this.groupBoxDataVariant.Size = new System.Drawing.Size(368, 378);
-            this.groupBoxDataVariant.TabIndex = 3;
-            this.groupBoxDataVariant.TabStop = false;
-            this.groupBoxDataVariant.Text = "Исходнные данные по варианту";
-            // 
-            // dataGridViewEcologya
-            // 
-            this.dataGridViewEcologya.AllowUserToAddRows = false;
-            this.dataGridViewEcologya.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Amount,
-            this.Value});
-            this.dataGridViewEcologya.Location = new System.Drawing.Point(12, 30);
-            this.dataGridViewEcologya.Margin = new System.Windows.Forms.Padding(4);
-            this.dataGridViewEcologya.Name = "dataGridViewEcologya";
-            this.dataGridViewEcologya.ReadOnly = true;
-            this.dataGridViewEcologya.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
-            this.dataGridViewEcologya.Size = new System.Drawing.Size(344, 333);
-            this.dataGridViewEcologya.TabIndex = 1;
-            // 
-            // Amount
-            // 
-            this.Amount.HeaderText = "Величина";
-            this.Amount.Name = "Amount";
-            this.Amount.ReadOnly = true;
-            this.Amount.Width = 150;
-            // 
-            // Value
-            // 
-            this.Value.HeaderText = "Значение";
-            this.Value.Name = "Value";
-            this.Value.ReadOnly = true;
-            this.Value.Width = 150;
-            // 
             // groupBoxTask
             // 
             this.groupBoxTask.Controls.Add(this.labelExercise);
@@ -414,7 +425,7 @@
             this.groupBoxTask.Margin = new System.Windows.Forms.Padding(4);
             this.groupBoxTask.Name = "groupBoxTask";
             this.groupBoxTask.Padding = new System.Windows.Forms.Padding(4);
-            this.groupBoxTask.Size = new System.Drawing.Size(375, 145);
+            this.groupBoxTask.Size = new System.Drawing.Size(375, 124);
             this.groupBoxTask.TabIndex = 2;
             this.groupBoxTask.TabStop = false;
             this.groupBoxTask.Text = "Задание по варианту";
@@ -436,22 +447,11 @@
             this.visualStyler1.License = ((SkinSoft.VisualStyler.Licensing.VisualStylerLicense)(resources.GetObject("visualStyler1.License")));
             this.visualStyler1.LoadVisualStyle(null, "Kupo XP 2 Green (Normal).vssf");
             // 
-            // panelTester
-            // 
-            this.panelTester.Controls.Add(this.groupBoxWarning);
-            this.panelTester.Controls.Add(this.groupBoxDataVariant);
-            this.panelTester.Controls.Add(this.groupBoxControl);
-            this.panelTester.Controls.Add(this.groupBoxTask);
-            this.panelTester.Location = new System.Drawing.Point(2, 2);
-            this.panelTester.Name = "panelTester";
-            this.panelTester.Size = new System.Drawing.Size(785, 538);
-            this.panelTester.TabIndex = 1;
-            // 
             // TestingEcologya
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(789, 562);
+            this.ClientSize = new System.Drawing.Size(805, 576);
             this.Controls.Add(this.tabControlEcologya);
             this.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -468,8 +468,11 @@
             this.splitContainer1.ResumeLayout(false);
             this.contextMenuWebBrowser.ResumeLayout(false);
             this.tabPageTester.ResumeLayout(false);
+            this.panelTester.ResumeLayout(false);
             this.groupBoxWarning.ResumeLayout(false);
             this.groupBoxWarning.PerformLayout();
+            this.groupBoxDataVariant.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewEcologya)).EndInit();
             this.groupBoxControl.ResumeLayout(false);
             this.panelResult.ResumeLayout(false);
             this.panelResult.PerformLayout();
@@ -477,12 +480,9 @@
             this.panelRemainingTime.PerformLayout();
             this.panelTime.ResumeLayout(false);
             this.panelTime.PerformLayout();
-            this.groupBoxDataVariant.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewEcologya)).EndInit();
             this.groupBoxTask.ResumeLayout(false);
             this.groupBoxTask.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.visualStyler1)).EndInit();
-            this.panelTester.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
