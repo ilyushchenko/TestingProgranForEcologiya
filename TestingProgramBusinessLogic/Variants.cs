@@ -9,7 +9,8 @@ namespace TestingProgramBusinessLogic
             return new Variant[]
             {
                 new Variant(){VariantNuimber=1, Answer=16}, 
-                new Variant(){VariantNuimber=2, Answer=6.5}
+                new Variant(){VariantNuimber=2, Answer=6.5},
+                new Variant(){VariantNuimber=3, Answer=6.118}
             };
         }
     }
