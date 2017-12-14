@@ -110,7 +110,7 @@ namespace GUI_testing
             butResult.Enabled = true;
             timerTest.Enabled = true;
             timerTest.Start();
-            butStart.Enabled = false;
+         //   butStart.Enabled = false;
             Variant variant = test_manager.StartTest(3, 45);
             BuildTabelVariant(variant);
         }
