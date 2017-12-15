@@ -8,7 +8,7 @@
         /// <summary>
         /// Номер варианта
         /// </summary>
-        public int VariantNuimber { get; set; }
+        public int? VariantNuimber { get; set; }
         /// <summary>
         /// Исследуемое вещество
         /// </summary>
@@ -16,63 +16,63 @@
         /// <summary>
         /// ПДК, для данного вещества
         /// </summary>
-        public double PDK { get; set; }
+        public double? PDK { get; set; }
         /// <summary>
         /// Фоновая концентрация загрезняющего вещества
         /// </summary>
-        public double C_f { get; set; }
+        public double? C_f { get; set; }
         /// <summary>
         /// Высота трубы
         /// </summary>
-        public double H { get; set; }
+        public double? H { get; set; }
         /// <summary>
         /// Температура выбрасываемого загрезняющего вещества
         /// </summary>
-        public double Temperature { get; set; }
+        public double? Temperature { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public double F { get; set; }
+        public double? F { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public double M { get; set; }
+        public double? M { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public double N { get; set; }
+        public double? N { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public double Mx { get; set; }
+        public double? Mx { get; set; }
         /// <summary>
         /// Среднемесячная температура воздуха
         /// </summary>
-        public double TemperatureAvg { get; set; }
+        public double? TemperatureAvg { get; set; }
         /// <summary>
         /// Диметр трубы
         /// </summary>
-        public double Diameter { get; set; }
+        public double? Diameter { get; set; }
         /// <summary>
         /// Длинна сторона А 
         /// </summary>
-        public double SideA { get; set; }
+        public double? SideA { get; set; }
         /// <summary>
         /// Длинна сторона Б
         /// </summary>
-        public double SideB { get; set; }
+        public double? SideB { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public double W0 { get; set; }
+        public double? W0 { get; set; }
         /// <summary>
         /// Коэффициент
         /// </summary>
-        public double A { get; set; }
+        public double? A { get; set; }
         /// <summary>
         /// Скорость ветра
         /// </summary>
-        public double Vh { get; set; }
+        public double? Vh { get; set; }
         /// <summary>
         /// Тип выбросов
         /// </summary>
