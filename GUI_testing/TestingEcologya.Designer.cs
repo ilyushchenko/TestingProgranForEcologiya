@@ -47,8 +47,6 @@
             this.labelTask = new System.Windows.Forms.Label();
             this.groupBoxDataVariant = new System.Windows.Forms.GroupBox();
             this.dataGridViewEcologya = new System.Windows.Forms.DataGridView();
-            this.Amount = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Value = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBoxControl = new System.Windows.Forms.GroupBox();
             this.panelResult = new System.Windows.Forms.Panel();
             this.butResult = new System.Windows.Forms.Button();
@@ -63,6 +61,8 @@
             this.groupBoxTask = new System.Windows.Forms.GroupBox();
             this.labelExercise = new System.Windows.Forms.Label();
             this.visualStyler1 = new SkinSoft.VisualStyler.VisualStyler(this.components);
+            this.Amount = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Value = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabControlEcologya.SuspendLayout();
             this.tabPageBook.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
@@ -275,6 +275,8 @@
             // dataGridViewEcologya
             // 
             this.dataGridViewEcologya.AllowUserToAddRows = false;
+            this.dataGridViewEcologya.AllowUserToDeleteRows = false;
+            this.dataGridViewEcologya.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dataGridViewEcologya.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Amount,
             this.Value});
@@ -285,20 +287,6 @@
             this.dataGridViewEcologya.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
             this.dataGridViewEcologya.Size = new System.Drawing.Size(344, 355);
             this.dataGridViewEcologya.TabIndex = 1;
-            // 
-            // Amount
-            // 
-            this.Amount.HeaderText = "Величина";
-            this.Amount.Name = "Amount";
-            this.Amount.ReadOnly = true;
-            this.Amount.Width = 150;
-            // 
-            // Value
-            // 
-            this.Value.HeaderText = "Значение";
-            this.Value.Name = "Value";
-            this.Value.ReadOnly = true;
-            this.Value.Width = 150;
             // 
             // groupBoxControl
             // 
@@ -447,6 +435,22 @@
             this.visualStyler1.License = ((SkinSoft.VisualStyler.Licensing.VisualStylerLicense)(resources.GetObject("visualStyler1.License")));
             this.visualStyler1.LoadVisualStyle(null, "Kupo XP 2 Green (Normal).vssf");
             // 
+            // Amount
+            // 
+            this.Amount.HeaderText = "Величина";
+            this.Amount.Name = "Amount";
+            this.Amount.ReadOnly = true;
+            this.Amount.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.Amount.Width = 150;
+            // 
+            // Value
+            // 
+            this.Value.HeaderText = "Значение";
+            this.Value.Name = "Value";
+            this.Value.ReadOnly = true;
+            this.Value.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.Value.Width = 150;
+            // 
             // TestingEcologya
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
@@ -497,8 +501,6 @@
         private System.Windows.Forms.TreeView treeViewEcologya;
         private System.Windows.Forms.WebBrowser webBrowserEcologya;
         private System.Windows.Forms.DataGridView dataGridViewEcologya;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Amount;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Value;
         private System.Windows.Forms.GroupBox groupBoxDataVariant;
         private System.Windows.Forms.GroupBox groupBoxTask;
         private System.Windows.Forms.GroupBox groupBoxControl;
@@ -522,6 +524,8 @@
         private System.Windows.Forms.Label labelAttemptHint;
         private System.Windows.Forms.Panel panelResult;
         private System.Windows.Forms.Panel panelTester;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Amount;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Value;
     }
 }
 

@@ -32,7 +32,7 @@ namespace TestingProgramBusinessLogic
         /// <summary>
         /// Используется, для получения случайного варианта
         /// </summary>
-        private Random rnd = new Random();
+        private Random rnd;
 
         /// <summary>
         /// Список вариантов
@@ -52,6 +52,7 @@ namespace TestingProgramBusinessLogic
         /// <param name="loader">Коллекция объектов, реализующая интерефейс <see cref="IDataLoader{T}"/></param>
         public TestManager(IDataLoader<Variant> loader)
         {
+            rnd = new Random(DateTime.Now.Second);
             m_variants = new List<Variant>();
             m_variants.AddRange(loader.GetCollection());
         }
@@ -106,7 +107,7 @@ namespace TestingProgramBusinessLogic
         /// <returns>В случае правильного отвера возвращает </returns>
         public bool CheckAnwser(double userAnwser)
         {
-            double errorValue = 0.05;
+            double errorValue = m_variants[m_currentVariant].Answer * 0.05;
             bool result = Math.Abs(m_variants[m_currentVariant].Answer - userAnwser) < errorValue;
             if (!result)
             {

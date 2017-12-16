@@ -129,6 +129,9 @@
   <metadata name="tabPageTester.Skinned" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>False</value>
   </metadata>
+  <metadata name="dataGridViewEcologya.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
   <metadata name="Amount.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
@@ -139,10 +142,10 @@
     <value>99, 6</value>
   </metadata>
   <data name="labelTask.Text" xml:space="preserve">
-    <value>На решение теста даестя 45 минут время отсчитывается
+    <value>На решение теста дается 45 минут время отсчитывается
  с момента нажатия кнопки "Начать тест". Максимальное 
 количество попыток 3.При вычислении на каждом шагу 
-округлять большую сторону значение до тысячных.
+округлять в большую сторону значение до тысячных.
 
 При расчете принять следующие значения равными:
 пи = 3,14
