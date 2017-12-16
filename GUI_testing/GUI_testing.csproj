@@ -48,6 +48,7 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <DocumentationFile>bin\Release\GUI_testing.XML</DocumentationFile>
   </PropertyGroup>
   <PropertyGroup>
     <ManifestCertificateThumbprint>A768AD0093AF53AE48E88A5596EE5300D8691042</ManifestCertificateThumbprint>
@@ -63,6 +64,9 @@
   </PropertyGroup>
   <PropertyGroup>
     <ApplicationIcon>zemnoy-shar.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>GUI_testing.Program</StartupObject>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="SkinSoft.VisualStyler, Version=2.4.0.0, Culture=neutral, PublicKeyToken=0fda9f423e1d9830, processorArchitecture=MSIL" />
