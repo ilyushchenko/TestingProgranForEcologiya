@@ -1,9 +1,9 @@
-﻿namespace TestingProgramBusinessLogic
+﻿namespace TestingProgram.Data
 {
     /// <summary>
     /// Класс данных варианта
     /// </summary>
-    public class Variant
+    public class Variant : IVariant
     {
         /// <summary>
         /// Номер варианта

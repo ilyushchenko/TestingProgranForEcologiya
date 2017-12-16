@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using TestingProgramBusinessLogic;
 using System.IO;
+using TestingProgram.Data;
 
 namespace GUI_testing
 {
@@ -111,8 +112,12 @@ namespace GUI_testing
             timerTest.Enabled = true;
             timerTest.Start();
             butStart.Enabled = false;
-            Variant variant = test_manager.StartTest(3, 45);
-            BuildTabelVariant(variant);
+            IVariant variantTemp = test_manager.StartTest(3, 45);
+            if (variantTemp is Variant )
+            {
+                Variant variant = variantTemp as Variant;
+                BuildTabelVariant(variant);
+            }
         }
 
         private void BuildTabelVariant(Variant variant)

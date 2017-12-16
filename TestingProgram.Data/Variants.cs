@@ -1,13 +1,13 @@
 ﻿using System.Collections.Generic;
 
-namespace TestingProgramBusinessLogic
+namespace TestingProgram.Data
 {
-    public class Variants : IDataLoader<Variant>
+    public class Variants : IDataLoader<IVariant>
     {
         #region Коллекция вариантов
-        public IEnumerable<Variant> GetCollection()
+        public IEnumerable<IVariant> GetCollection()
         {
-            return new Variant[]
+            return new IVariant[]
             {
                 /// <summary>
                 ///                 ГОРЯЧИЙ ИСТОЧНИК
