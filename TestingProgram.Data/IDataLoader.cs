@@ -1,8 +1,8 @@
 ﻿using System.Collections.Generic;
 
-namespace TestingProgramBusinessLogic
+namespace TestingProgram.Data
 {
-    public interface IDataLoader<T> where T:class
+    public interface IDataLoader<T> where T:IVariant
     {
         IEnumerable<T> GetCollection();
     }

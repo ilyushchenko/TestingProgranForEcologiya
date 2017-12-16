@@ -120,6 +120,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\TestingProgram.Data\TestingProgram.Data.csproj">
+      <Project>{ad9df5e5-2cad-4182-b61d-c20aa7c484dd}</Project>
+      <Name>TestingProgram.Data</Name>
+    </ProjectReference>
     <ProjectReference Include="..\TestingProgramBusinessLogic\TestingProgramBusinessLogic.csproj">
       <Project>{19b88c40-77ea-4d44-b2c5-7099e80bca1f}</Project>
       <Name>TestingProgramBusinessLogic</Name>

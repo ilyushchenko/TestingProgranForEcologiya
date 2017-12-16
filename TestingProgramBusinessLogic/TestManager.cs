@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using TestingProgram.Data;
 
 namespace TestingProgramBusinessLogic
 {
@@ -37,7 +38,7 @@ namespace TestingProgramBusinessLogic
         /// <summary>
         /// Список вариантов
         /// </summary>
-        private List<Variant> m_variants;
+        private List<IVariant> m_variants;
 
         /// <summary>
         /// Номер текущего варианта
@@ -50,10 +51,10 @@ namespace TestingProgramBusinessLogic
         /// Конструктор менеджера тестирования
         /// </summary>
         /// <param name="loader">Коллекция объектов, реализующая интерефейс <see cref="IDataLoader{T}"/></param>
-        public TestManager(IDataLoader<Variant> loader)
+        public TestManager(IDataLoader<IVariant> loader)
         {
             rnd = new Random(DateTime.Now.Second);
-            m_variants = new List<Variant>();
+            m_variants = new List<IVariant>();
             m_variants.AddRange(loader.GetCollection());
         }
 
@@ -63,7 +64,7 @@ namespace TestingProgramBusinessLogic
         /// <param name="tryCount">Количество попыток</param>
         /// <param name="testingTime">Время на выполнение теста (минут)</param>
         /// <returns>Вариант решения типа <see cref="Variant"/></returns>
-        public Variant StartTest(int tryCount, int testingTime)
+        public IVariant StartTest(int tryCount, int testingTime)
         {
             TryCount = tryCount > 0 ? tryCount : 1;
             Countdown = new TimeSpan(0, testingTime > 0 ? testingTime : 1, 0);
