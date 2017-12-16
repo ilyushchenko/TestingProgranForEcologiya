@@ -113,8 +113,9 @@ namespace GUI_testing
             timerTest.Start();
             butStart.Enabled = false;
             IVariant variantTemp = test_manager.StartTest(3, 45);
-            if (variantTemp is Variant variant)
+            if (variantTemp is Variant )
             {
+                Variant variant = variantTemp as Variant;
                 BuildTabelVariant(variant);
             }
         }
